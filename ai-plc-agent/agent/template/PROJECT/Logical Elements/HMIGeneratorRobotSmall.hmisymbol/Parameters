@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SymbolParameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Parameters Name="Label" Id="6b4255be-2a3d-471a-a10c-2bc82ccf7e3c" Type="String" Comment="" />
+  <Parameters Name="openPage" Id="64c75123-16b2-43e3-aeb7-1fa8fe13b45d" Type="HmiPage" Comment="" />
+  <Parameters Name="InstancePath_App" Id="61261757-8043-4f09-8b22-698efa3b982f" Type="String" Comment="" />
+  <Parameters Name="InstancePath_Symbol" Id="67410b78-c8ec-40c4-a3d7-278a10f39604" Type="String" Comment="" />
+</SymbolParameters>

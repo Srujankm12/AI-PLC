@@ -1,0 +1,11 @@
+<DataLoggerConfigDocument>
+  <LogSession Name="ContainerTrend" Datasink="TSDB" Destination="/opt/plcnext/logs/datalogger/ContainerTrend" SamplingInterval="100ms" PublishInterval="200ms" BufferCapacity="10" Rollover="false" WriteInterval="1000" MaxFileSize="5000000" MaxFiles="-1" StoreChanges="false" DeleteRatio="5" TimestampFormat="Raw">
+    <Variable Name="Arp.Plc.Eclr/TemperatureCurrent" />
+    <Variable Name="Arp.Plc.Eclr/LevelCurrent" />
+    <TriggerCondition IsEnabled="false" PreCycles="10" PostCycles="10" TaskContext="">
+      <RpnItem Type="Constant"></RpnItem>
+      <RpnItem Type="Constant"></RpnItem>
+      <RpnItem Type="Operation">And</RpnItem>
+    </TriggerCondition>
+  </LogSession>
+</DataLoggerConfigDocument>

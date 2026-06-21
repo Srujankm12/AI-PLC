@@ -1,0 +1,19 @@
+{ CustomGroupDefinition('00000000-0000-0000-0000-000000000000', '') }
+
+VAR
+    Robot1 : Robot.RobotFB {Id('48d9d189-5eab-4651-9d51-2ef612d7d87a')};
+    Robot2 : Robot.RobotFB {Id('e807117e-6414-4abd-8cd2-3dd310e91b20')};
+END_VAR
+
+VAR_EXTERNAL
+    R1Range : INT {Id('1414995d-6ff5-438c-afe4-93004d046234')};
+    R1Claw : INT {Id('e81c6f54-27d6-48d2-8e09-b4ecbb40a68c')};
+    R2Range : INT {Id('3f9751a7-1ec2-4f30-a07c-1e9fcd47b35d')};
+    R2Claw : INT {Id('f2e03e5f-440b-47c9-981d-832215fd0a85')};
+    R1X : INT {Id('ce0b5344-bbb7-48d6-a097-d55dc3f50904')};
+    R1Y : INT {Id('2d3a45a2-f599-4d99-b022-c9675440d9fa')};
+    R1Z : INT {Id('e6d2cf24-e3c8-4747-832e-809f575be160')};
+    R2X : INT {Id('3f97a844-5fdd-4c60-87ea-a80cb24c4331')};
+    R2Y : INT {Id('2fe539b5-690b-41c7-be1c-fd67f14b4b27')};
+    R2Z : INT {Id('65b9d74f-6be3-4ffa-a6fb-617f598fbb72')};
+END_VAR

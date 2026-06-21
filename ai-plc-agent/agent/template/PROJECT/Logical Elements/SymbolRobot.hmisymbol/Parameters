@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SymbolParameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Parameters Name="Rbt" Id="3ff3bb0f-3d9c-4408-9887-c75fa2f42b1a" Type="AnyUDT" Comment="">
+    <Udt>Robot.RobotUDT</Udt>
+  </Parameters>
+</SymbolParameters>

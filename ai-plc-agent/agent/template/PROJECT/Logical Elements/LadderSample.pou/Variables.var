@@ -1,0 +1,29 @@
+{CustomGroupDefinition('838c8f1f-1409-4ebe-824e-493aa3ecd1c4', 'Inputs')}{CustomGroupDefinition('13c4b07d-684a-49f1-acb5-d59d787c5f83', 'Outputs')}{CustomGroupDefinition('00000000-0000-0000-0000-000000000000', '')}
+
+VAR
+    IN00 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('f38f7228-3dbd-470f-9624-5de952800140')};
+    IN01 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('83192bae-27e5-4a5b-a37e-6544677dfed2')};
+    IN02 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('d60d3492-0204-4e2a-92f6-059a8945f9e1')};
+    IN03 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('9f990b75-05b4-411c-9327-310ac8d8f8c7')};
+    IN04 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('59820e74-47e0-4015-a264-bef96ac6e25f')};
+    IN05 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('4b81f3e7-5b83-4c8c-ba5c-e61d55e7cc7c')};
+    IN06 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('24f8fb33-f723-438c-8093-8931b13767f5')};
+    IN07 AT %I* : BOOL {CustomGroupReference('838c8f1f-1409-4ebe-824e-493aa3ecd1c4')} {Id('3982f03b-cef0-40c5-b9b4-5fc9c2d34bc0')};
+    OUT00 AT %Q* : BOOL {CustomGroupReference('13c4b07d-684a-49f1-acb5-d59d787c5f83')} {Id('be57c9e9-9d0c-4271-8dca-cd099d1c77f9')};
+    OUT01 AT %Q* : BOOL {CustomGroupReference('13c4b07d-684a-49f1-acb5-d59d787c5f83')} {Id('19066ada-7267-4b14-ade7-5ae7213e745b')};
+    OUT02 AT %Q* : BOOL {CustomGroupReference('13c4b07d-684a-49f1-acb5-d59d787c5f83')} {Id('21ee4ab8-ddd1-4654-9b6a-6a620aee23ca')};
+    OUT03 AT %Q* : BOOL {CustomGroupReference('13c4b07d-684a-49f1-acb5-d59d787c5f83')} {Id('b33ee19e-03a5-4ef4-a4f9-e18b1d937cdf')};
+    OUT04 AT %Q* : BOOL {CustomGroupReference('13c4b07d-684a-49f1-acb5-d59d787c5f83')} {Id('72118aa0-caa4-405f-8a96-b14818738493')};
+    OUT05 AT %Q* : BOOL {CustomGroupReference('13c4b07d-684a-49f1-acb5-d59d787c5f83')} {Id('f34a163d-c235-470b-9d8b-9125a82ecc2f')};
+    OUT06 AT %Q* : BOOL {CustomGroupReference('13c4b07d-684a-49f1-acb5-d59d787c5f83')} {Id('5a993c99-91b8-4bd5-a030-20bd8b08f626')};
+END_VAR
+
+VAR_EXTERNAL
+    ContainerStart : BOOL {Id('e0a62dec-9cfb-4c6b-b1d4-57df10edb4b8')};
+END_VAR
+
+VAR
+    UpCounter : CTU {Id('0df309bf-fe3d-48fd-bfec-4f81b6b07eb0')};
+    UpCounterValue : INT {Id('a740bd04-1b50-4708-8761-63cf68d514d4')};
+END_VAR
+

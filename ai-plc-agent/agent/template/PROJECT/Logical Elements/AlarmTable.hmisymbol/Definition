@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Symbol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="AlarmTable" ResizeMethod="Scaling">
+  <Objects>
+    <HmiObject xsi:type="ListBox" Rotation="0" ID="SymbolList1" IsTabSelectable="false" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" SourceType="AlarmView" HorizontalLineColor="#FF3E3D40" HorizontalLineWidth="1" ScrollBarMode="Hide" SelectionBehavior="Never" ScrollEnabled="true" SelectEnabled="true">
+      <Origin>
+        <X>9.947598300641403E-14</X>
+        <Y>-83.99999999999997</Y>
+      </Origin>
+      <Location>
+        <X>9.947598300641403E-14</X>
+        <Y>-83.99999999999997</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#FF3E3D40" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>660</Width>
+        <Height>203.99999999999997</Height>
+      </Size>
+      <Padding>0</Padding>
+      <HorizontalScroll>false</HorizontalScroll>
+      <VerticalScroll>false</VerticalScroll>
+      <Direction>Vertical</Direction>
+      <SymbolName>AlarmRow</SymbolName>
+      <Parameters>
+        <Parameter xsi:type="ParameterBindingField" ParameterID="5d86807b-484e-4bfc-afc8-4006c789b181" Source="AlarmId" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="9c6df341-dda1-40db-9487-c745f748d632" Source="Message" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="be03ccef-7b5c-456e-a08b-6c2b53e5e003" Source="AlarmType" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="75cf0419-2cbf-44d0-b638-ee116a025f51" Source="Comment" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="a4f1fbef-49b1-4faf-b9e7-10133d3911c8" Source="AlarmId" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="aae6faf7-81f7-46a4-a2da-49e6ff0cdc6f" Source="AlarmType" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="611116c3-7a19-4533-b770-ce15a8414a42" Source="Comment" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="dbf294e2-67c4-4d41-b90d-02307fe53f86" Source="Condition" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="85d2fd65-199e-44e0-a656-921df8d4cf51" Source="ConditionValue" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="2b0b43c7-df11-442b-a681-b7db2db3906c" Source="ConditionVariableName" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="c6a7ca34-f2da-4631-a813-7433b9e20bf5" Source="Description" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="1bbdd2e1-9df7-4cf2-90f2-8f7e9ca76a9b" Source="Group" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="430be5d8-8352-4f84-8786-c3ce5d211c85" Source="Message" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="f3fab2eb-3115-49fa-b610-852b1359b6b8" Source="SourceName" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="155cd0ad-77b9-4623-b6db-ea22836aebd4" Source="State" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="b2ccaee0-a57a-4fa9-a695-a4f035e5a38b" Source="SuppressVariableName" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="64ddcba2-34be-417e-985f-71a629a02ff1" Source="User" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="b1bf4715-e3f6-45bb-9a26-b62f88db4ce4" Source="AckedState" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="b6b6ef5d-eabc-4ec6-b9c7-c81e6322d834" Source="AcknowledgeRequired" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="8e3bb658-3f7f-4a15-bc40-0ebe3c352496" Source="ActiveState" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="80a92fb9-22ab-4d06-887a-37da15a596e1" Source="ConfirmedState" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="6e0492a3-57f6-408e-8660-e6a05b553ddd" Source="ConfirmRequired" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="6400d130-dfc5-4f71-a171-7df1019e0985" Source="SuppressAllowed" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="aefcf58a-8c5d-44ee-a3a8-a57e79fe5aaf" Source="SuppressedState" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="a14703ff-2927-47a6-9dfd-9bd2f2b4866e" Source="AckedStateChanged" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="170daf04-6e2c-4a13-b5bd-5cd71d538f9d" Source="ActiveStateChanged" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="5247d254-0fb1-4d76-b7ac-91fe7fd2525f" Source="ConfirmedStateChanged" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="ad282d51-1573-4121-8ee4-e9dcd6421c4c" Source="SuppressedStateChanged" />
+        <Parameter xsi:type="ParameterBindingField" ParameterID="9a696784-1fd9-4691-8920-0e2062ddd65b" Source="Priority" />
+      </Parameters>
+    </HmiObject>
+    <HmiObject xsi:type="HmiText" Rotation="0" ID="Text1" IsTabSelectable="true" TabOrder="0" LineColor="#FFECEDED" LineWidth="1" Text="Alarms" FontFamily="Arial" FontSize="23" FontStyle="normal" FontWeight="400" FontColor="#FFECEDED" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="12" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+      <Origin>
+        <X>0</X>
+        <Y>-120</Y>
+      </Origin>
+      <Location>
+        <X>0</X>
+        <Y>-120</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#FF3E3D40" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>660</Width>
+        <Height>36</Height>
+      </Size>
+    </HmiObject>
+  </Objects>
+</Symbol>

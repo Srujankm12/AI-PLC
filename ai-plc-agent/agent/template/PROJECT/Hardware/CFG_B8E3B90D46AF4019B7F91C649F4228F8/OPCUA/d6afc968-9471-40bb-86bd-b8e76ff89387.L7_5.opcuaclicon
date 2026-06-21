@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClientConnectionsConfiguration xmlns="http://phoenixcontact.com/OpcUA/PLCnext/GlobalDataSpace/">
+  <VariableGroup GroupType="Subscribe" CycleTime="100">
+    <VariableMapping>
+      <LocalVariable Identifier="Arp.Plc.Eclr/ESM_DATA" />
+      <RemoteVariable Identifier="" ShortName="" Namespace="http://phoenixcontact.com/OpcUA/PLCnext/GlobalDataSpace/" ServerName="Connection1" />
+    </VariableMapping>
+  </VariableGroup>
+  <Connection Name="Connection1" ServerUrl="opc.tcp://hostname.de:4840" SecurityMode="SignAndEncrypt" SecurityPolicy="BestAvailable" UserName="" Password="" ServerIndex="1" />
+</ClientConnectionsConfiguration>

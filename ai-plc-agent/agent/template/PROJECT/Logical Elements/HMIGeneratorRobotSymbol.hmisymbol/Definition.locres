@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextResourceID>108</NextResourceID>
+  <Languages ID="0" Name="Default" />
+  <Resources ID="104" Name="Button1.Text">
+    <Values LanguageID="0" LocalValue="Close" />
+  </Resources>
+  <Resources ID="105" Name="TextInput1.Text">
+    <Values LanguageID="0" LocalValue="Texteingabe" />
+  </Resources>
+  <Resources ID="106" Name="TextInput2.Text">
+    <Values LanguageID="0" LocalValue="Texteingabe" />
+  </Resources>
+  <Resources ID="107" Name="TextInput3.Text">
+    <Values LanguageID="0" LocalValue="Texteingabe" />
+  </Resources>
+</ResourcesDocument>

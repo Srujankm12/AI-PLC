@@ -1,0 +1,14 @@
+VAR_IN_OUT
+    ContainerLevelMonitoring : ContainerMonitoring {Id('19decd9e-7659-41ea-9ded-0f531cacd84e')};
+END_VAR
+
+VAR_INPUT
+    ContainerStates : ContainerStructArray {Id('57b5779e-73a3-4b61-b6a8-c2ef6942e412')};
+    ContainerLevel : INT {Id('ae236602-be08-4ffc-aed2-fd63c76d0872')};
+    MinimumLevel : INT {Id('57bd167e-d4b6-4ffb-a859-14e5f4646f93')};
+END_VAR
+
+VAR
+    StartUp : BOOL {Id('2b564912-38f6-4286-9fb5-c971ac45ea80')};
+END_VAR
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SymbolParameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Parameters Name="Label" Id="c5f1e878-ba7e-41fc-9a2a-2eed9a5de43b" Type="String" Comment="" />
+  <Parameters Name="RobotAxis" Id="487b1ae7-a20b-4965-9538-8cb38bb344f3" Type="AnyUDT" Comment="">
+    <Udt>Robot.RobotUDT</Udt>
+  </Parameters>
+</SymbolParameters>

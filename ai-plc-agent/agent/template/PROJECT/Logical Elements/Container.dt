@@ -1,0 +1,25 @@
+TYPE
+    ContainerStruct : STRUCT
+        Drain : BOOL;
+        Heater : BOOL;
+        Intake : BOOL;
+        Level : INT;
+        Temp : INT;
+        StateOfContainer : STRING;
+        ValuesOfContainer : STRING;
+    END_STRUCT
+    ContainerStructArray : ARRAY[0..2] OF ContainerStruct;
+END_TYPE
+
+TYPE 
+    LongTermContainerData : STRUCT
+        Level : INT;
+        Temp : INT;
+    END_STRUCT
+    LongTermContainerArray : ARRAY[0..15] OF LongTermContainerData;            
+END_TYPE
+   
+TYPE    
+   (*Enum shows the Container Monitor*)
+    ContainerMonitoring : (ContainerStarting, FluidRising, FluidFalling := 2) OF INT := ContainerStarting;    
+END_TYPE

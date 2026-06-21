@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Symbol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SymbolRobot" ResizeMethod="Scaling">
+  <Objects>
+    <HmiObject xsi:type="HmiImage" Rotation="0" ID="Image1" IsTabSelectable="false" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" ImageId="b4eb08b1-5689-4484-9a46-9067b2af1866" ImageScaling="Fit">
+      <Origin>
+        <X>2</X>
+        <Y>-327</Y>
+      </Origin>
+      <Location>
+        <X>2</X>
+        <Y>-327</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>236</Width>
+        <Height>327</Height>
+      </Size>
+    </HmiObject>
+    <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SymbolInstance1" IsTabSelectable="false" TabOrder="0">
+      <Origin>
+        <X>330</X>
+        <Y>-423</Y>
+      </Origin>
+      <Location>
+        <X>330</X>
+        <Y>-423</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Scale>
+        <Height>1</Height>
+        <Width>1</Width>
+      </Scale>
+      <SymbolId>0eee089b-e8d4-4b09-8637-9efb9c998f0a</SymbolId>
+      <Parameters>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="bae855af-ced8-4fe3-ba8d-28124f72315c">
+          <Source xmlns:q1="http://www.w3.org/2001/XMLSchema" xsi:type="q1:double">-10000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="38784b4c-ed53-46ef-a105-d3f2bf0f3e8b">
+          <Source xmlns:q2="http://www.w3.org/2001/XMLSchema" xsi:type="q2:double">10000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="0edb97f6-5ffa-49a4-904c-de50fdb647dd">
+          <Source xmlns:q3="http://www.w3.org/2001/XMLSchema" xsi:type="q3:double">2500</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="091d7e28-88d4-4566-b824-f4fa28736798">
+          <Source xmlns:q4="http://www.w3.org/2001/XMLSchema" xsi:type="q4:double">-10000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="d68ca5b0-6954-47fb-9f62-17e61fe55f28">
+          <Source xmlns:q5="http://www.w3.org/2001/XMLSchema" xsi:type="q5:double">10000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="32f27511-5fe6-4fcf-ba66-d153806fe3d4">
+          <Source xmlns:q6="http://www.w3.org/2001/XMLSchema" xsi:type="q6:double">2500</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="8ffd3f80-fca7-4038-bfaa-2a18c36af7e2">
+          <Source xmlns:q7="http://www.w3.org/2001/XMLSchema" xsi:type="q7:double">-10000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="64ea856b-a420-4aec-90ca-818f00eb4c22">
+          <Source xmlns:q8="http://www.w3.org/2001/XMLSchema" xsi:type="q8:double">10000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingVariable" ParameterID="e1dc59ca-50b2-45e1-8287-ed4888a8bdad">
+          <SourceInstance>
+            <Name>Rbt</Name>
+            <Suffix>.RZ</Suffix>
+          </SourceInstance>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="ea8a4a7f-275c-41ff-bbdc-e32629e09410">
+          <Source xsi:type="SolidFill" Color="#FF0098A1" />
+        </Parameter>
+      </Parameters>
+    </HmiObject>
+    <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SymbolInstance2" IsTabSelectable="false" TabOrder="0">
+      <Origin>
+        <X>-347</X>
+        <Y>-317</Y>
+      </Origin>
+      <Location>
+        <X>-347</X>
+        <Y>-317</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Scale>
+        <Height>1</Height>
+        <Width>1</Width>
+      </Scale>
+      <SymbolId>effa659b-306f-4d9e-98ee-a79660c31276</SymbolId>
+      <Parameters>
+        <Parameter xsi:type="ParameterBindingVariable" ParameterID="4a3a3c88-686b-42c0-a11e-5179b4d92c14">
+          <SourceInstance>
+            <Name>Rbt</Name>
+            <Suffix>.RY</Suffix>
+          </SourceInstance>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="79c74ea8-61f1-4b7a-997d-2441e91acdb8">
+          <Source xmlns:q9="http://www.w3.org/2001/XMLSchema" xsi:type="q9:double">-15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="8b56be96-f135-4d0c-83c2-7c32556d8d8d">
+          <Source xmlns:q10="http://www.w3.org/2001/XMLSchema" xsi:type="q10:double">15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="224a1b0c-a642-44ee-9bf3-4ff391956d01">
+          <Source xmlns:q11="http://www.w3.org/2001/XMLSchema" xsi:type="q11:double">5000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="4bcddbb1-ae5d-46c9-bef7-3526a13dc9d5">
+          <Source xmlns:q12="http://www.w3.org/2001/XMLSchema" xsi:type="q12:double">-15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="d0d180cb-366f-4080-8cb7-2fa5142cf470">
+          <Source xmlns:q13="http://www.w3.org/2001/XMLSchema" xsi:type="q13:double">15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="484d7487-1778-4bc8-9085-a0475988cf1c">
+          <Source xmlns:q14="http://www.w3.org/2001/XMLSchema" xsi:type="q14:double">5000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="3ab815f0-1511-4bd5-9341-327d923bb7d3">
+          <Source xmlns:q15="http://www.w3.org/2001/XMLSchema" xsi:type="q15:double">-15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="752a5b53-3348-4d5d-b2ba-262b1c6387e3">
+          <Source xmlns:q16="http://www.w3.org/2001/XMLSchema" xsi:type="q16:double">15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="9f8af2d3-4839-4c2f-9eb2-5638e245524a">
+          <Source xmlns:q17="http://www.w3.org/2001/XMLSchema" xsi:type="q17:int">4</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="03fc73fc-6124-465c-a26d-b268f913f9f6">
+          <Source xmlns:q18="http://www.w3.org/2001/XMLSchema" xsi:type="q18:int">4</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="b31db649-c25d-496c-9576-d11f7465351e">
+          <Source xsi:type="SolidFill" Color="#FF3E3D40" />
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="bda4baef-bfee-4d2c-a195-91f3768c3fca">
+          <Source xsi:type="SolidFill" Color="#FF0098A1" />
+        </Parameter>
+      </Parameters>
+    </HmiObject>
+    <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SymbolInstance3" IsTabSelectable="false" TabOrder="0">
+      <Origin>
+        <X>-48</X>
+        <Y>55</Y>
+      </Origin>
+      <Location>
+        <X>-48</X>
+        <Y>55</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Scale>
+        <Height>3.1666666666666665</Height>
+        <Width>3.1666666666666665</Width>
+      </Scale>
+      <SymbolId>304f8c2a-b78d-4bb3-bdea-9207d3cf0679</SymbolId>
+      <Parameters>
+        <Parameter xsi:type="ParameterBindingVariable" ParameterID="a54f298f-a657-41d5-bc94-a6a03319e662">
+          <SourceInstance>
+            <Name>Rbt</Name>
+            <Suffix>.RX</Suffix>
+          </SourceInstance>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="458b7a40-1dea-4b8a-ad57-59269a2e506b">
+          <Source xmlns:q19="http://www.w3.org/2001/XMLSchema" xsi:type="q19:double">-15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="a35c685a-652f-4bb7-bf22-a680240d2dec">
+          <Source xmlns:q20="http://www.w3.org/2001/XMLSchema" xsi:type="q20:double">15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="675fa5f4-cb3d-4ea4-80dd-13af6c4381bf">
+          <Source xmlns:q21="http://www.w3.org/2001/XMLSchema" xsi:type="q21:double">5000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="391dc715-cb96-4c9d-85d1-1d5d98275f5a">
+          <Source xmlns:q22="http://www.w3.org/2001/XMLSchema" xsi:type="q22:double">15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="2242b7dc-1d7b-4f62-a377-0141183e71e1">
+          <Source xmlns:q23="http://www.w3.org/2001/XMLSchema" xsi:type="q23:double">-15000</Source>
+        </Parameter>
+        <Parameter xsi:type="ParameterBindingProperty" ParameterID="5016ecef-9cba-43a1-b577-3a7747042aa7">
+          <Source xmlns:q24="http://www.w3.org/2001/XMLSchema" xsi:type="q24:string">#FF0098A1</Source>
+        </Parameter>
+      </Parameters>
+    </HmiObject>
+  </Objects>
+  <References>
+    <Documents>
+      <Document Id="0eee089b-e8d4-4b09-8637-9efb9c998f0a" NodeType="HmiSymbol" Name="Linear Vertical Gauge" />
+      <Document Id="effa659b-306f-4d9e-98ee-a79660c31276" NodeType="HmiSymbol" Name="Linear Horizontal Gauge" />
+      <Document Id="304f8c2a-b78d-4bb3-bdea-9207d3cf0679" NodeType="HmiSymbol" Name="Rectangular Segment Gauge" />
+    </Documents>
+  </References>
+</Symbol>

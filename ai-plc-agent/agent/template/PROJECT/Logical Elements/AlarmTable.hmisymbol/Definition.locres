@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextResourceID>101</NextResourceID>
+  <Languages ID="0" Name="Default" />
+  <Languages ID="1" Name="de" />
+  <Resources ID="100" Name="Text1.Text">
+    <Values LanguageID="0" LocalValue="Alarms" />
+    <Values LanguageID="1" LocalValue="Alarme" />
+  </Resources>
+</ResourcesDocument>

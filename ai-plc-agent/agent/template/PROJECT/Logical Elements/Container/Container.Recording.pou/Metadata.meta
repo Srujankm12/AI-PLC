@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>PouFolder</FolderType>
+   <ContentType>Program</ContentType>
+   <Kind>Program</Kind>
+   <Usings></Usings>
+   <Id>0b9f1c16-bedb-441e-af84-9d4807b00b64</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>40bca0f2-618e-48c5-bbfe-938304e355cc</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="Code.ld">
+         <Id>28cd1f59-ce94-45f5-93d9-cf96b5408426</Id>
+         <Extension>.ld</Extension>
+         <Type>.ld</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="AlarmThesholds.st">
+         <Id>8a89fefe-ed1b-4926-b968-4cda22ab6df1</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>1</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

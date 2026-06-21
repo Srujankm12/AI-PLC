@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SymbolParameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Parameters Name="AlarmId" Id="a4f1fbef-49b1-4faf-b9e7-10133d3911c8" Type="String" Comment="" />
+  <Parameters Name="AlarmType" Id="aae6faf7-81f7-46a4-a2da-49e6ff0cdc6f" Type="String" Comment="" />
+  <Parameters Name="Comment" Id="611116c3-7a19-4533-b770-ce15a8414a42" Type="String" Comment="" />
+  <Parameters Name="Condition" Id="dbf294e2-67c4-4d41-b90d-02307fe53f86" Type="String" Comment="" />
+  <Parameters Name="ConditionValue" Id="85d2fd65-199e-44e0-a656-921df8d4cf51" Type="String" Comment="" />
+  <Parameters Name="ConditionVariableName" Id="2b0b43c7-df11-442b-a681-b7db2db3906c" Type="String" Comment="" />
+  <Parameters Name="Description" Id="c6a7ca34-f2da-4631-a813-7433b9e20bf5" Type="String" Comment="" />
+  <Parameters Name="Group" Id="1bbdd2e1-9df7-4cf2-90f2-8f7e9ca76a9b" Type="String" Comment="" />
+  <Parameters Name="Message" Id="430be5d8-8352-4f84-8786-c3ce5d211c85" Type="String" Comment="" />
+  <Parameters Name="SourceName" Id="f3fab2eb-3115-49fa-b610-852b1359b6b8" Type="String" Comment="" />
+  <Parameters Name="State" Id="155cd0ad-77b9-4623-b6db-ea22836aebd4" Type="String" Comment="" />
+  <Parameters Name="SuppressVariableName" Id="b2ccaee0-a57a-4fa9-a695-a4f035e5a38b" Type="String" Comment="" />
+  <Parameters Name="User" Id="64ddcba2-34be-417e-985f-71a629a02ff1" Type="String" Comment="" />
+  <Parameters Name="AckedState" Id="b1bf4715-e3f6-45bb-9a26-b62f88db4ce4" Type="Bool" Comment="" />
+  <Parameters Name="AcknowledgeRequired" Id="b6b6ef5d-eabc-4ec6-b9c7-c81e6322d834" Type="Bool" Comment="" />
+  <Parameters Name="ActiveState" Id="8e3bb658-3f7f-4a15-bc40-0ebe3c352496" Type="Bool" Comment="" />
+  <Parameters Name="ConfirmedState" Id="80a92fb9-22ab-4d06-887a-37da15a596e1" Type="Bool" Comment="" />
+  <Parameters Name="ConfirmRequired" Id="6e0492a3-57f6-408e-8660-e6a05b553ddd" Type="Bool" Comment="" />
+  <Parameters Name="SuppressAllowed" Id="6400d130-dfc5-4f71-a171-7df1019e0985" Type="Bool" Comment="" />
+  <Parameters Name="SuppressedState" Id="aefcf58a-8c5d-44ee-a3a8-a57e79fe5aaf" Type="Bool" Comment="" />
+  <Parameters Name="AckedDateChanged" Id="a14703ff-2927-47a6-9dfd-9bd2f2b4866e" Type="AnyDate" Comment="" />
+  <Parameters Name="ActiveStateChanged" Id="170daf04-6e2c-4a13-b5bd-5cd71d538f9d" Type="AnyDate" Comment="" />
+  <Parameters Name="ConfirmedStateChanged" Id="5247d254-0fb1-4d76-b7ac-91fe7fd2525f" Type="AnyDate" Comment="" />
+  <Parameters Name="SuppressedStateChanged" Id="ad282d51-1573-4121-8ee4-e9dcd6421c4c" Type="AnyDate" Comment="" />
+  <Parameters Name="Priority" Id="9a696784-1fd9-4691-8920-0e2062ddd65b" Type="Number" Comment="" />
+</SymbolParameters>

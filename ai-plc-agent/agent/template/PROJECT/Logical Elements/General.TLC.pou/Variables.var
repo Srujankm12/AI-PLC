@@ -1,0 +1,14 @@
+VAR_INPUT
+    ActualValue : INT {Id('393231e3-c96c-482c-8997-6d306b48d312')};
+    Minimum : INT {Id('f295d4ae-6609-42fe-8dfa-1d6d1bb39bbe')};
+    Maximum : INT {Id('a98333cb-b97a-4312-b487-e47463d28ae2')};
+END_VAR
+
+VAR_OUTPUT
+    Switch : BOOL {Id('3e7571c1-d1e3-436b-91d6-159d63fb3a95')};
+END_VAR
+
+VAR
+    TLCRS : RS {Id('71dba5a0-e5a3-47f7-8ce5-ef3a0642ab05')};
+END_VAR
+

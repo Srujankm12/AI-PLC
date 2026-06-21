@@ -1,0 +1,1953 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HmiPage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Main" BorderWidth="0">
+  <References>
+    <Documents>
+      <Document Id="27409c8f-d30e-4b66-b973-cfaf880584cf" NodeType="HmiPageTemplate" Name="PxCPage" />
+      <Document Id="6ef3dad1-8fc9-4284-ae6e-2d7962f2d076" NodeType="HmiPageTemplate" Name="Blank Page" />
+      <Document Id="f71f0193-f7eb-467b-8f3c-4c2936cb29cc" NodeType="HmiPageTemplate" Name="Login" />
+      <Document Id="9ee1426e-d659-41e7-858b-d0e3d0815ffc" NodeType="HmiSymbol" Name="Vertical Vessel" />
+      <Document Id="73d41571-6ffe-4fdb-84ed-786a188ef1a6" NodeType="HmiSymbol" Name="Fan" />
+      <Document Id="40a344f2-19fe-4f6b-900e-e1640e63d2de" NodeType="HmiSymbol" Name="Control Valve" />
+      <Document Id="480400e8-d029-44bd-930f-2936966a3c40" NodeType="HmiSymbol" Name="Signal Connector Right" />
+      <Document Id="0a879392-2ca2-49bc-821a-9575026eb894" NodeType="HmiSymbol" Name="Arc Gauge" />
+      <Document Id="a97489e1-9934-4290-bf61-53e7e6869e06" NodeType="HmiSymbol" Name="Vertical Slider" />
+      <Document Id="8dc946b0-83c1-4937-a981-3ed7c167577a" NodeType="HmiPage" Name="Robot" />
+      <Document Id="61abfec3-4ab4-4760-a692-e747fa8a9b79" NodeType="HmiSymbol" Name="Round Label" />
+      <Document Id="aec2d5a4-30a2-4f1e-9500-0adfdb9112b6" NodeType="HmiSymbol" Name="Rounded Rectangle Label" />
+    </Documents>
+  </References>
+  <Layers>
+    <Layer>
+      <Objects>
+        <HmiObject xsi:type="HmiPipe" Rotation="0" ID="Pipe2" IsTabSelectable="false" TabOrder="0" LineColor="#FF0098A1" LineWidth="20" FontFamily="Tahoma" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Flat" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="Pipe" ShowBulkheads="false" OutlineColor="#FFFFFF">
+          <Origin>
+            <X>795</X>
+            <Y>286</Y>
+          </Origin>
+          <Location>
+            <X>795</X>
+            <Y>286</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="FillDynamic" TargetProperty="LineColor" Interpolate="false" Rate="None">
+            <VariableInstance>
+              <Name>Intake</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>Intake</ExpressionLine>
+            </Expression>
+            <ThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q1="http://www.w3.org/2001/XMLSchema" xsi:type="q1:int">0</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF3E3D40" />
+              </FillDynamicThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q2="http://www.w3.org/2001/XMLSchema" xsi:type="q2:int">1</Threshold>
+                <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+              </FillDynamicThresholdData>
+            </ThresholdData>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <SubPaths IsClosed="false">
+            <Start>
+              <X>0</X>
+              <Y>0</Y>
+            </Start>
+            <Segments xsi:type="LinePathSegment">
+              <End>
+                <X>29.00000000000033</X>
+                <Y>0</Y>
+              </End>
+            </Segments>
+          </SubPaths>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="Heater" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>851.4999999999999</X>
+            <Y>624</Y>
+          </Origin>
+          <Location>
+            <X>851.2008368200836</X>
+            <Y>623.7008368200837</Y>
+          </Location>
+          <TransformCenter>
+            <X>0.299163179916318</X>
+            <Y>0.299163179916318</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>5.983263598326356</Height>
+            <Width>5.983263598326356</Width>
+          </Scale>
+          <SymbolId>73d41571-6ffe-4fdb-84ed-786a188ef1a6</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="3a349374-4c78-494a-8262-44d7d23e670f">
+              <Source xsi:type="SolidFill" Color="#FF3E3D40" />
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="ab0c76bb-128f-4aab-98bd-677aff918ca3">
+              <SourceInstance>
+                <Name>Heater</Name>
+              </SourceInstance>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="8fc8cbd7-79b0-41e9-ac01-a0c406b04ed6">
+              <Source xsi:type="ArrayOfFillDynamicThresholdData">
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q3="http://www.w3.org/2001/XMLSchema" xsi:type="q3:int">0</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFADD8E6" />
+                </FillDynamicThresholdData>
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q4="http://www.w3.org/2001/XMLSchema" xsi:type="q4:int">1</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFFFA500" />
+                </FillDynamicThresholdData>
+              </Source>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="DrainValve" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>1067</X>
+            <Y>436</Y>
+          </Origin>
+          <Location>
+            <X>1067.0001666663195</X>
+            <Y>433.66788571724646</Y>
+          </Location>
+          <TransformCenter>
+            <X>-0.0001666663194455196</X>
+            <Y>2.332114282753527</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.5112197270305392</Height>
+            <Width>1.6666631944516785</Width>
+          </Scale>
+          <SymbolId>40a344f2-19fe-4f6b-900e-e1640e63d2de</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="f416317e-5733-48d8-b94b-1068648c8a66">
+              <Source xsi:type="ArrayOfFillDynamicThresholdData">
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q5="http://www.w3.org/2001/XMLSchema" xsi:type="q5:int">0</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFECEDED" />
+                </FillDynamicThresholdData>
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q6="http://www.w3.org/2001/XMLSchema" xsi:type="q6:int">1</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+                </FillDynamicThresholdData>
+              </Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="14bfddd8-83e8-4e1d-805b-2fe74963d8e0">
+              <SourceInstance>
+                <Name>Drain</Name>
+              </SourceInstance>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="580587ea-38a5-40dc-b549-853387dfd134">
+              <Source xsi:type="ArrayOfFillDynamicThresholdData">
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q7="http://www.w3.org/2001/XMLSchema" xsi:type="q7:int">0</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFECEDED" />
+                </FillDynamicThresholdData>
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q8="http://www.w3.org/2001/XMLSchema" xsi:type="q8:int">1</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+                </FillDynamicThresholdData>
+              </Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="2e330933-0bc9-4774-90be-e21f9a4ac29f">
+              <Source xsi:type="ArrayOfFillDynamicThresholdData">
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q9="http://www.w3.org/2001/XMLSchema" xsi:type="q9:int">0</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFECEDED" />
+                </FillDynamicThresholdData>
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q10="http://www.w3.org/2001/XMLSchema" xsi:type="q10:int">1</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+                </FillDynamicThresholdData>
+              </Source>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="OUT" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>1749</X>
+            <Y>469</Y>
+          </Origin>
+          <Location>
+            <X>1748.8072978977953</X>
+            <Y>468.87394957983196</Y>
+          </Location>
+          <TransformCenter>
+            <X>0.19270210220475142</X>
+            <Y>0.1260504201680672</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.260504201680672</Height>
+            <Width>1.1463539690942972</Width>
+          </Scale>
+          <SymbolId>480400e8-d029-44bd-930f-2936966a3c40</SymbolId>
+        </HmiObject>
+        <HmiObject xsi:type="Group" Rotation="0" ID="GrpTemp" IsTabSelectable="false" TabOrder="0">
+          <Objects>
+            <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="Tem" IsTabSelectable="false" TabOrder="0">
+              <Origin>
+                <X>8.848477506262498E-14</X>
+                <Y>2.7144952952085077E-14</Y>
+              </Origin>
+              <Location>
+                <X>-0.5372022377844132</X>
+                <Y>-0.27964387873242913</Y>
+              </Location>
+              <TransformCenter>
+                <X>0.5372022377845017</X>
+                <Y>0.2796438787324563</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Scale>
+                <Height>2.796438787324563</Height>
+                <Width>2.796438787324563</Width>
+              </Scale>
+              <SymbolId>0a879392-2ca2-49bc-821a-9575026eb894</SymbolId>
+              <Parameters>
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="f45dfd59-9fd6-4648-9b90-4ba3f0e7de0c">
+                  <Source xmlns:q11="http://www.w3.org/2001/XMLSchema" xsi:type="q11:string">#FF90EE90</Source>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingVariable" ParameterID="97eb720f-25fe-4c8f-b810-8be7cb781f80">
+                  <SourceInstance>
+                    <Name>TemperatureCurrent</Name>
+                  </SourceInstance>
+                </Parameter>
+              </Parameters>
+            </HmiObject>
+            <HmiObject xsi:type="Group" Rotation="0" ID="GrpTempVal" IsTabSelectable="false" TabOrder="0">
+              <Objects>
+                <HmiObject xsi:type="HmiText" Rotation="0" ID="TUnit" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="°C" FontFamily="Arial" FontSize="20" FontStyle="normal" FontWeight="400" FontColor="#FF90EE90" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+                  <Origin>
+                    <X>16.778632723947112</X>
+                    <Y>36.06111270565839</Y>
+                  </Origin>
+                  <Location>
+                    <X>16.778632723947112</X>
+                    <Y>36.06111270565839</Y>
+                  </Location>
+                  <TransformCenter>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </TransformCenter>
+                  <EnableSecurityScope>Always</EnableSecurityScope>
+                  <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+                  <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+                  <VisibleSecurityScope>Always</VisibleSecurityScope>
+                  <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+                  <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+                  <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+                  <DashStyle>
+                    <Offset>0</Offset>
+                    <Dashes />
+                  </DashStyle>
+                  <Size>
+                    <Width>44.74302059719429</Width>
+                    <Height>36.35370423521933</Height>
+                  </Size>
+                </HmiObject>
+                <HmiObject xsi:type="HmiText" Rotation="0" ID="TValue" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Text" FontFamily="Arial" FontSize="22" FontStyle="normal" FontWeight="400" FontColor="#FF90EE90" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+                  <Origin>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </Origin>
+                  <Location>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </Location>
+                  <TransformCenter>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </TransformCenter>
+                  <Dynamic xsi:type="TextDynamic" TargetProperty="Text">
+                    <VariableInstance>
+                      <Name>TemperatureCurrent</Name>
+                    </VariableInstance>
+                    <Expression xsi:type="SimpleSTExpression">
+                      <ExpressionLine>TemperatureCurrent</ExpressionLine>
+                    </Expression>
+                  </Dynamic>
+                  <EnableSecurityScope>Always</EnableSecurityScope>
+                  <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+                  <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+                  <VisibleSecurityScope>Always</VisibleSecurityScope>
+                  <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+                  <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+                  <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+                  <DashStyle>
+                    <Offset>0</Offset>
+                    <Dashes />
+                  </DashStyle>
+                  <Size>
+                    <Width>78.30028604508814</Width>
+                    <Height>36.353704235219325</Height>
+                  </Size>
+                </HmiObject>
+              </Objects>
+              <Origin>
+                <X>60.849856977456284</X>
+                <Y>55.096317935708214</Y>
+              </Origin>
+              <Location>
+                <X>60.849856977456284</X>
+                <Y>55.096317935708214</Y>
+              </Location>
+              <TransformCenter>
+                <X>0</X>
+                <Y>0</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+            </HmiObject>
+          </Objects>
+          <Origin>
+            <X>1099</X>
+            <Y>571</Y>
+          </Origin>
+          <Location>
+            <X>1099</X>
+            <Y>571</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+        </HmiObject>
+        <HmiObject xsi:type="Group" Rotation="0" ID="GrpLevel" IsTabSelectable="false" TabOrder="0">
+          <Objects>
+            <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SymbolInstance6" IsTabSelectable="false" TabOrder="0">
+              <Origin>
+                <X>8.870681966755001E-14</X>
+                <Y>2.731148640577885E-14</Y>
+              </Origin>
+              <Location>
+                <X>-0.5372022377844132</X>
+                <Y>-0.27964387873242913</Y>
+              </Location>
+              <TransformCenter>
+                <X>0.5372022377845019</X>
+                <Y>0.27964387873245644</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Scale>
+                <Height>2.796438787324564</Height>
+                <Width>2.796438787324564</Width>
+              </Scale>
+              <SymbolId>0a879392-2ca2-49bc-821a-9575026eb894</SymbolId>
+              <Parameters>
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="f45dfd59-9fd6-4648-9b90-4ba3f0e7de0c">
+                  <Source xmlns:q12="http://www.w3.org/2001/XMLSchema" xsi:type="q12:string">#FF0098A1</Source>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingVariable" ParameterID="97eb720f-25fe-4c8f-b810-8be7cb781f80">
+                  <SourceInstance>
+                    <Name>LevelCurrent</Name>
+                  </SourceInstance>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="1feb555b-950d-40e7-aa77-01671701ec5e">
+                  <Source xmlns:q13="http://www.w3.org/2001/XMLSchema" xsi:type="q13:double">1000</Source>
+                </Parameter>
+              </Parameters>
+            </HmiObject>
+            <HmiObject xsi:type="Group" Rotation="0" ID="GrpLevelVal" IsTabSelectable="false" TabOrder="0">
+              <Objects>
+                <HmiObject xsi:type="HmiText" Rotation="0" ID="LUnit" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="l" FontFamily="Arial" FontSize="20" FontStyle="normal" FontWeight="400" FontColor="#FF0098A1" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+                  <Origin>
+                    <X>16.778632723947112</X>
+                    <Y>36.46823513100901</Y>
+                  </Origin>
+                  <Location>
+                    <X>16.778632723947112</X>
+                    <Y>36.46823513100901</Y>
+                  </Location>
+                  <TransformCenter>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </TransformCenter>
+                  <EnableSecurityScope>Always</EnableSecurityScope>
+                  <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+                  <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+                  <VisibleSecurityScope>Always</VisibleSecurityScope>
+                  <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+                  <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+                  <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+                  <DashStyle>
+                    <Offset>0</Offset>
+                    <Dashes />
+                  </DashStyle>
+                  <Size>
+                    <Width>44.74302059719429</Width>
+                    <Height>36.35370423521933</Height>
+                  </Size>
+                </HmiObject>
+                <HmiObject xsi:type="HmiText" Rotation="0" ID="LValue" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Text" FontFamily="Arial" FontSize="22" FontStyle="normal" FontWeight="400" FontColor="#FF0098A1" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+                  <Origin>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </Origin>
+                  <Location>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </Location>
+                  <TransformCenter>
+                    <X>0</X>
+                    <Y>0</Y>
+                  </TransformCenter>
+                  <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+                    <VariableInstance>
+                      <Name>LevelCurrent</Name>
+                    </VariableInstance>
+                    <Expression xsi:type="SimpleSTExpression">
+                      <ExpressionLine>LevelCurrent</ExpressionLine>
+                    </Expression>
+                  </Dynamic>
+                  <EnableSecurityScope>Always</EnableSecurityScope>
+                  <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+                  <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+                  <VisibleSecurityScope>Always</VisibleSecurityScope>
+                  <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+                  <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+                  <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+                  <DashStyle>
+                    <Offset>0</Offset>
+                    <Dashes />
+                  </DashStyle>
+                  <Size>
+                    <Width>78.30028604508819</Width>
+                    <Height>36.35370423521933</Height>
+                  </Size>
+                </HmiObject>
+              </Objects>
+              <Origin>
+                <X>60.849856977456284</X>
+                <Y>54.89275672303279</Y>
+              </Origin>
+              <Location>
+                <X>60.849856977456284</X>
+                <Y>54.89275672303279</Y>
+              </Location>
+              <TransformCenter>
+                <X>0</X>
+                <Y>0</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+            </HmiObject>
+          </Objects>
+          <Origin>
+            <X>1099</X>
+            <Y>209.99999999999997</Y>
+          </Origin>
+          <Location>
+            <X>1099</X>
+            <Y>209.99999999999997</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SldrSetPointMinTemp" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>64.00402439024394</X>
+            <Y>372</Y>
+          </Origin>
+          <Location>
+            <X>62.3059292817247</X>
+            <Y>363.73983739837405</Y>
+          </Location>
+          <TransformCenter>
+            <X>1.698095108519239</X>
+            <Y>8.260162601625938</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.3766937669376689</Height>
+            <Width>1.3766937669376689</Width>
+          </Scale>
+          <SymbolId>a97489e1-9934-4290-bf61-53e7e6869e06</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="12da0461-3cfa-47f0-90ac-71bd61b7ed9f">
+              <SourceInstance>
+                <Name>TemperatureMinimum</Name>
+              </SourceInstance>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="a20cb429-0d3c-45f0-a69c-3673f6fc1629">
+              <Source xsi:type="SolidFill" Color="#FF0000FF" />
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="524c3e2e-2865-49fe-8adf-6e2e8d48cedd">
+              <Source xmlns:q14="http://www.w3.org/2001/XMLSchema" xsi:type="q14:string">#FFCCD0D2</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="67944d82-5800-413c-a1bb-334208740a6b">
+              <Source xmlns:q15="http://www.w3.org/2001/XMLSchema" xsi:type="q15:string">#FFCCD0D2</Source>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SldrSetPointMaxTemp" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>168.15849593495943</X>
+            <Y>372</Y>
+          </Origin>
+          <Location>
+            <X>166.4604008264402</X>
+            <Y>363.73983739837405</Y>
+          </Location>
+          <TransformCenter>
+            <X>1.6980951085192395</X>
+            <Y>8.260162601625932</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.3766937669376684</Height>
+            <Width>1.3766937669376684</Width>
+          </Scale>
+          <SymbolId>a97489e1-9934-4290-bf61-53e7e6869e06</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="12da0461-3cfa-47f0-90ac-71bd61b7ed9f">
+              <SourceInstance>
+                <Name>TemperatureMaximum</Name>
+              </SourceInstance>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="a20cb429-0d3c-45f0-a69c-3673f6fc1629">
+              <Source xsi:type="SolidFill" Color="#FFFF0000" />
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="524c3e2e-2865-49fe-8adf-6e2e8d48cedd">
+              <Source xmlns:q16="http://www.w3.org/2001/XMLSchema" xsi:type="q16:string">#FFCCD0D2</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="67944d82-5800-413c-a1bb-334208740a6b">
+              <Source xmlns:q17="http://www.w3.org/2001/XMLSchema" xsi:type="q17:string">#FFCCD0D2</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="f4fa9d1c-15b0-4d01-b04b-ef5d79ad6ff5">
+              <Source xmlns:q18="http://www.w3.org/2001/XMLSchema" xsi:type="q18:string">#FF3E3D40</Source>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="HmiText" Rotation="0" ID="SetPointMinTemp" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Text" FontFamily="Arial" FontSize="22" FontStyle="normal" FontWeight="400" FontColor="#FF0000FF" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Right" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+          <Origin>
+            <X>76</X>
+            <Y>902</Y>
+          </Origin>
+          <Location>
+            <X>76</X>
+            <Y>902</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+            <VariableInstance>
+              <Name>TemperatureMinimum</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>TemperatureMinimum</ExpressionLine>
+            </Expression>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>40</Width>
+            <Height>24</Height>
+          </Size>
+        </HmiObject>
+        <HmiObject xsi:type="HmiText" Rotation="0" ID="SetPointMaxTemp" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Text" FontFamily="Arial" FontSize="22" FontStyle="normal" FontWeight="400" FontColor="#FFFF0000" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Right" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+          <Origin>
+            <X>184</X>
+            <Y>901.9999999999999</Y>
+          </Origin>
+          <Location>
+            <X>184</X>
+            <Y>901.9999999999999</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+            <VariableInstance>
+              <Name>TemperatureMaximum</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>TemperatureMaximum</ExpressionLine>
+            </Expression>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>40</Width>
+            <Height>24</Height>
+          </Size>
+        </HmiObject>
+        <HmiObject xsi:type="HmiText" Rotation="0" ID="TSetPointsTemp" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="°C&#xD;&#xA;Set Points Temp" FontFamily="Arial" FontSize="20" FontStyle="normal" FontWeight="400" FontColor="#FFCCD0D2" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+          <Origin>
+            <X>46</X>
+            <Y>930</Y>
+          </Origin>
+          <Location>
+            <X>46</X>
+            <Y>930</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>197.00000000000006</Width>
+            <Height>49.00000000000006</Height>
+          </Size>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SldrSetPointMinLevel" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>326.926056910569</X>
+            <Y>370</Y>
+          </Origin>
+          <Location>
+            <X>325.2212763882367</X>
+            <Y>361.7073170731708</Y>
+          </Location>
+          <TransformCenter>
+            <X>1.7047805223323085</X>
+            <Y>8.292682926829192</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.3821138211382107</Height>
+            <Width>1.3821138211382107</Width>
+          </Scale>
+          <SymbolId>a97489e1-9934-4290-bf61-53e7e6869e06</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="12da0461-3cfa-47f0-90ac-71bd61b7ed9f">
+              <SourceInstance>
+                <Name>LevelMinimum</Name>
+              </SourceInstance>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="a20cb429-0d3c-45f0-a69c-3673f6fc1629">
+              <Source xsi:type="SolidFill" Color="#FFFFA500" />
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="524c3e2e-2865-49fe-8adf-6e2e8d48cedd">
+              <Source xmlns:q19="http://www.w3.org/2001/XMLSchema" xsi:type="q19:string">#FFCCD0D2</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="67944d82-5800-413c-a1bb-334208740a6b">
+              <Source xmlns:q20="http://www.w3.org/2001/XMLSchema" xsi:type="q20:string">#FFCCD0D2</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="e305fc3e-6cf1-4f01-af27-7d737bd0d11e">
+              <Source xmlns:q21="http://www.w3.org/2001/XMLSchema" xsi:type="q21:double">1000</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="8b2b907a-da11-4471-bba6-9170f834663c">
+              <Source xmlns:q22="http://www.w3.org/2001/XMLSchema" xsi:type="q22:double">100</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="63a5f37b-043a-45e6-8b3b-36499a8ec87c">
+              <Source xmlns:q23="http://www.w3.org/2001/XMLSchema" xsi:type="q23:double">1000</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="e12723e2-52e2-436f-b5c4-6f5dd82e18e3">
+              <Source xmlns:q24="http://www.w3.org/2001/XMLSchema" xsi:type="q24:double">1000</Source>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SldrSetPointMaxLevel" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>431.08052845528454</X>
+            <Y>370</Y>
+          </Origin>
+          <Location>
+            <X>429.3757479329522</X>
+            <Y>361.7073170731708</Y>
+          </Location>
+          <TransformCenter>
+            <X>1.704780522332307</X>
+            <Y>8.292682926829183</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.3821138211382107</Height>
+            <Width>1.3821138211382107</Width>
+          </Scale>
+          <SymbolId>a97489e1-9934-4290-bf61-53e7e6869e06</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="12da0461-3cfa-47f0-90ac-71bd61b7ed9f">
+              <SourceInstance>
+                <Name>LevelMaximum</Name>
+              </SourceInstance>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="a20cb429-0d3c-45f0-a69c-3673f6fc1629">
+              <Source xsi:type="SolidFill" Color="#FFFFA500" />
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="524c3e2e-2865-49fe-8adf-6e2e8d48cedd">
+              <Source xmlns:q25="http://www.w3.org/2001/XMLSchema" xsi:type="q25:string">#FFCCD0D2</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="67944d82-5800-413c-a1bb-334208740a6b">
+              <Source xmlns:q26="http://www.w3.org/2001/XMLSchema" xsi:type="q26:string">#FFCCD0D2</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="f4fa9d1c-15b0-4d01-b04b-ef5d79ad6ff5">
+              <Source xmlns:q27="http://www.w3.org/2001/XMLSchema" xsi:type="q27:string">#FF3E3D40</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="e305fc3e-6cf1-4f01-af27-7d737bd0d11e">
+              <Source xmlns:q28="http://www.w3.org/2001/XMLSchema" xsi:type="q28:double">1000</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="8b2b907a-da11-4471-bba6-9170f834663c">
+              <Source xmlns:q29="http://www.w3.org/2001/XMLSchema" xsi:type="q29:double">100</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="63a5f37b-043a-45e6-8b3b-36499a8ec87c">
+              <Source xmlns:q30="http://www.w3.org/2001/XMLSchema" xsi:type="q30:double">1000</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="e12723e2-52e2-436f-b5c4-6f5dd82e18e3">
+              <Source xmlns:q31="http://www.w3.org/2001/XMLSchema" xsi:type="q31:double">1000</Source>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="HmiText" Rotation="0" ID="SetPointMinLevel" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Text" FontFamily="Arial" FontSize="22" FontStyle="normal" FontWeight="400" FontColor="#FFFFA500" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Right" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+          <Origin>
+            <X>342</X>
+            <Y>901.9999999999999</Y>
+          </Origin>
+          <Location>
+            <X>342</X>
+            <Y>901.9999999999999</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+            <VariableInstance>
+              <Name>LevelMinimum</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>LevelMinimum</ExpressionLine>
+            </Expression>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>40</Width>
+            <Height>24</Height>
+          </Size>
+        </HmiObject>
+        <HmiObject xsi:type="HmiText" Rotation="0" ID="SetPointMaxLevel" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Text" FontFamily="Arial" FontSize="22" FontStyle="normal" FontWeight="400" FontColor="#FFFFA500" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Right" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+          <Origin>
+            <X>446</X>
+            <Y>902</Y>
+          </Origin>
+          <Location>
+            <X>446</X>
+            <Y>902</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+            <VariableInstance>
+              <Name>LevelMaximum</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>LevelMaximum</ExpressionLine>
+            </Expression>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>40</Width>
+            <Height>24</Height>
+          </Size>
+        </HmiObject>
+        <HmiObject xsi:type="HmiText" Rotation="0" ID="TSetPointsLevel" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Liters\nSet Points Level" FontFamily="Arial" FontSize="20" FontStyle="normal" FontWeight="400" FontColor="#FFCCD0D2" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+          <Origin>
+            <X>312</X>
+            <Y>930</Y>
+          </Origin>
+          <Location>
+            <X>312</X>
+            <Y>930</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>196.00000000000003</Width>
+            <Height>49</Height>
+          </Size>
+        </HmiObject>
+        <HmiObject xsi:type="HmiChart" Rotation="0" ID="ChartTemp" IsTabSelectable="false" TabOrder="0" LineColor="#FF3E3D40" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square">
+          <Origin>
+            <X>1326</X>
+            <Y>571.9999999999999</Y>
+          </Origin>
+          <Location>
+            <X>1326</X>
+            <Y>571.9999999999999</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>537</Width>
+            <Height>181.10745281229404</Height>
+          </Size>
+          <Trends>
+            <Trend>
+              <VariablePath>Arp.Plc.Eclr/TemperatureCurrent</VariablePath>
+              <IsIncluded>true</IsIncluded>
+              <LineColor>#96D20D</LineColor>
+              <Placement>Left</Placement>
+            </Trend>
+            <Trend>
+              <VariablePath>Arp.Plc.Eclr/LevelCurrent</VariablePath>
+              <IsIncluded>false</IsIncluded>
+              <LineColor>#64C8FF</LineColor>
+              <Placement>Left</Placement>
+            </Trend>
+          </Trends>
+          <DataLoggerSessionRef>
+            <InstanceName>ContainerTrend</InstanceName>
+            <Paths>
+              <string>Arp.Plc.Eclr/TemperatureCurrent</string>
+              <string>Arp.Plc.Eclr/LevelCurrent</string>
+            </Paths>
+          </DataLoggerSessionRef>
+          <MinimumInterval>100</MinimumInterval>
+          <DataMode>Raw</DataMode>
+          <TrendSampleSize>1000</TrendSampleSize>
+          <AllAvailableOnTimeRange>false</AllAvailableOnTimeRange>
+          <XScaleDisplayMode>MM:SS</XScaleDisplayMode>
+          <PreloadData>false</PreloadData>
+          <AllowZoom>false</AllowZoom>
+          <LeftAxis>
+            <Visible>true</Visible>
+            <MinValue>0</MinValue>
+            <MaxValue>100</MaxValue>
+          </LeftAxis>
+          <RightAxis>
+            <Visible>false</Visible>
+            <MinValue>0</MinValue>
+            <MaxValue>0</MaxValue>
+          </RightAxis>
+          <HorizontalAxis>
+            <MajorTickCount>0</MajorTickCount>
+            <MinorTickCount>0</MinorTickCount>
+          </HorizontalAxis>
+          <TimeRange>000:01:40.000</TimeRange>
+        </HmiObject>
+        <HmiObject xsi:type="HmiChart" Rotation="0" ID="ChartLevel" IsTabSelectable="false" TabOrder="0" LineColor="#FFFFFFFF" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square">
+          <Origin>
+            <X>1326</X>
+            <Y>211</Y>
+          </Origin>
+          <Location>
+            <X>1326</X>
+            <Y>211</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>537</Width>
+            <Height>181.107452812294</Height>
+          </Size>
+          <Trends>
+            <Trend>
+              <VariablePath>Arp.Plc.Eclr/TemperatureCurrent</VariablePath>
+              <IsIncluded>false</IsIncluded>
+              <LineColor>#96D20D</LineColor>
+              <Placement>Left</Placement>
+            </Trend>
+            <Trend>
+              <VariablePath>Arp.Plc.Eclr/LevelCurrent</VariablePath>
+              <IsIncluded>true</IsIncluded>
+              <LineColor>#0099A1</LineColor>
+              <Placement>Left</Placement>
+            </Trend>
+          </Trends>
+          <DataLoggerSessionRef>
+            <InstanceName>ContainerTrend</InstanceName>
+            <Paths>
+              <string>Arp.Plc.Eclr/TemperatureCurrent</string>
+              <string>Arp.Plc.Eclr/LevelCurrent</string>
+            </Paths>
+          </DataLoggerSessionRef>
+          <MinimumInterval>100</MinimumInterval>
+          <DataMode>Raw</DataMode>
+          <TrendSampleSize>1000</TrendSampleSize>
+          <AllAvailableOnTimeRange>false</AllAvailableOnTimeRange>
+          <XScaleDisplayMode>MM:SS</XScaleDisplayMode>
+          <PreloadData>false</PreloadData>
+          <AllowZoom>false</AllowZoom>
+          <LeftAxis>
+            <Visible>true</Visible>
+            <MinValue>0</MinValue>
+            <MaxValue>1000</MaxValue>
+          </LeftAxis>
+          <RightAxis>
+            <Visible>false</Visible>
+            <MinValue>0</MinValue>
+            <MaxValue>0</MaxValue>
+          </RightAxis>
+          <HorizontalAxis>
+            <MajorTickCount>0</MajorTickCount>
+            <MinorTickCount>0</MinorTickCount>
+          </HorizontalAxis>
+          <TimeRange>000:01:40.000</TimeRange>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="ContainerVessel" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>830.0273196411277</X>
+            <Y>226</Y>
+          </Origin>
+          <Location>
+            <X>830.2498063093072</X>
+            <Y>226</Y>
+          </Location>
+          <TransformCenter>
+            <X>-0.22248666817954393</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>7.745302713987475</Height>
+            <Width>7.745302713987475</Width>
+          </Scale>
+          <SymbolId>9ee1426e-d659-41e7-858b-d0e3d0815ffc</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="908a14ef-a685-4017-8b6b-bb99c215fbf5">
+              <Source xsi:type="SolidFill" Color="#FFC75CFF" />
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="d4b32597-452c-4ef7-8c27-d10d3f560f82">
+              <Source xmlns:q32="http://www.w3.org/2001/XMLSchema" xsi:type="q32:double">1000</Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="7fc5c4cb-20c8-4dc5-aa53-502b945dff40">
+              <SourceInstance>
+                <Name>LevelCurrent</Name>
+              </SourceInstance>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="Group" Rotation="0" ID="K2" IsTabSelectable="false" TabOrder="0">
+          <Objects>
+            <HmiObject xsi:type="Line" Rotation="43" ID="K2B" IsTabSelectable="false" TabOrder="0" LineColor="#FFFFFFFF" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+              <Origin>
+                <X>49.999999999999886</X>
+                <Y>46.96033402922768</Y>
+              </Origin>
+              <Location>
+                <X>49.999999999999886</X>
+                <Y>46.96033402922768</Y>
+              </Location>
+              <TransformCenter>
+                <X>0</X>
+                <Y>0</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+              <DashStyle>
+                <Offset>0</Offset>
+                <Dashes />
+              </DashStyle>
+              <SubPaths IsClosed="false">
+                <Start>
+                  <X>0</X>
+                  <Y>0</Y>
+                </Start>
+                <Segments xsi:type="LinePathSegment">
+                  <End>
+                    <X>46.00000000000002</X>
+                    <Y>0</Y>
+                  </End>
+                </Segments>
+              </SubPaths>
+            </HmiObject>
+            <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="K2A" IsTabSelectable="false" TabOrder="0">
+              <Origin>
+                <X>-5.8678272828756964E-15</X>
+                <Y>6.689093723366568E-15</Y>
+              </Origin>
+              <Location>
+                <X>0</X>
+                <Y>-0.07962552192066141</Y>
+              </Location>
+              <TransformCenter>
+                <X>-5.8678272828756964E-15</X>
+                <Y>0.0796255219206681</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Scale>
+                <Height>1.5925104384133604</Height>
+                <Width>1.5925104384133604</Width>
+              </Scale>
+              <SymbolId>61abfec3-4ab4-4760-a692-e747fa8a9b79</SymbolId>
+              <Parameters>
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="f661f7e7-e5f2-4ce8-9d66-53cfea219563" Source="=K2" />
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="0ffc7ff9-8254-4ff7-8e5b-f5d54c1f1f89" Source="Drain" />
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="d53767d3-b7d7-4568-955a-6c4f7640b822">
+                  <Source xmlns:q33="http://www.w3.org/2001/XMLSchema" xsi:type="q33:double">7</Source>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="b52f61ec-db11-414d-a7e9-c38a37d31ed9">
+                  <Source xmlns:q34="http://www.w3.org/2001/XMLSchema" xsi:type="q34:double">9</Source>
+                </Parameter>
+              </Parameters>
+            </HmiObject>
+          </Objects>
+          <Origin>
+            <X>1021</X>
+            <Y>349</Y>
+          </Origin>
+          <Location>
+            <X>1021</X>
+            <Y>349</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+        </HmiObject>
+        <HmiObject xsi:type="Group" Rotation="0" ID="K1" IsTabSelectable="false" TabOrder="0">
+          <Objects>
+            <HmiObject xsi:type="Line" Rotation="43" ID="K1B" IsTabSelectable="false" TabOrder="0" LineColor="#FFFFFFFF" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+              <Origin>
+                <X>49.999999999999886</X>
+                <Y>46.96033402922768</Y>
+              </Origin>
+              <Location>
+                <X>49.999999999999886</X>
+                <Y>46.96033402922768</Y>
+              </Location>
+              <TransformCenter>
+                <X>0</X>
+                <Y>0</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+              <DashStyle>
+                <Offset>0</Offset>
+                <Dashes />
+              </DashStyle>
+              <SubPaths IsClosed="false">
+                <Start>
+                  <X>0</X>
+                  <Y>0</Y>
+                </Start>
+                <Segments xsi:type="LinePathSegment">
+                  <End>
+                    <X>46.00000000000002</X>
+                    <Y>0</Y>
+                  </End>
+                </Segments>
+              </SubPaths>
+            </HmiObject>
+            <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="K1A" IsTabSelectable="false" TabOrder="0">
+              <Origin>
+                <X>-5.8678272828756964E-15</X>
+                <Y>6.689093723366568E-15</Y>
+              </Origin>
+              <Location>
+                <X>0</X>
+                <Y>-0.07962552192066141</Y>
+              </Location>
+              <TransformCenter>
+                <X>-5.8678272828756964E-15</X>
+                <Y>0.0796255219206681</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Scale>
+                <Height>1.5925104384133604</Height>
+                <Width>1.5925104384133604</Width>
+              </Scale>
+              <SymbolId>61abfec3-4ab4-4760-a692-e747fa8a9b79</SymbolId>
+              <Parameters>
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="f661f7e7-e5f2-4ce8-9d66-53cfea219563" Source="=K1" />
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="0ffc7ff9-8254-4ff7-8e5b-f5d54c1f1f89" Source="Intake" />
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="d53767d3-b7d7-4568-955a-6c4f7640b822">
+                  <Source xmlns:q35="http://www.w3.org/2001/XMLSchema" xsi:type="q35:double">7</Source>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="b52f61ec-db11-414d-a7e9-c38a37d31ed9">
+                  <Source xmlns:q36="http://www.w3.org/2001/XMLSchema" xsi:type="q36:double">9</Source>
+                </Parameter>
+              </Parameters>
+            </HmiObject>
+          </Objects>
+          <Origin>
+            <X>655.0000000000001</X>
+            <Y>152.03966597077238</Y>
+          </Origin>
+          <Location>
+            <X>655.0000000000001</X>
+            <Y>152.03966597077238</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="IntakeValve" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>703</X>
+            <Y>239</Y>
+          </Origin>
+          <Location>
+            <X>703.0001666663195</X>
+            <Y>236.66788571724646</Y>
+          </Location>
+          <TransformCenter>
+            <X>-0.00016666631944551954</X>
+            <Y>2.332114282753527</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.5112197270305396</Height>
+            <Width>1.666663194451678</Width>
+          </Scale>
+          <SymbolId>40a344f2-19fe-4f6b-900e-e1640e63d2de</SymbolId>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="f416317e-5733-48d8-b94b-1068648c8a66">
+              <Source xsi:type="ArrayOfFillDynamicThresholdData">
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q37="http://www.w3.org/2001/XMLSchema" xsi:type="q37:int">0</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFECEDED" />
+                </FillDynamicThresholdData>
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q38="http://www.w3.org/2001/XMLSchema" xsi:type="q38:int">1</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+                </FillDynamicThresholdData>
+              </Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="14bfddd8-83e8-4e1d-805b-2fe74963d8e0">
+              <SourceInstance>
+                <Name>Intake</Name>
+              </SourceInstance>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="580587ea-38a5-40dc-b549-853387dfd134">
+              <Source xsi:type="ArrayOfFillDynamicThresholdData">
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q39="http://www.w3.org/2001/XMLSchema" xsi:type="q39:int">0</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFECEDED" />
+                </FillDynamicThresholdData>
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q40="http://www.w3.org/2001/XMLSchema" xsi:type="q40:int">1</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+                </FillDynamicThresholdData>
+              </Source>
+            </Parameter>
+            <Parameter xsi:type="ParameterBindingProperty" ParameterID="2e330933-0bc9-4774-90be-e21f9a4ac29f">
+              <Source xsi:type="ArrayOfFillDynamicThresholdData">
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q41="http://www.w3.org/2001/XMLSchema" xsi:type="q41:int">0</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFECEDED" />
+                </FillDynamicThresholdData>
+                <FillDynamicThresholdData Blink="false">
+                  <Threshold xmlns:q42="http://www.w3.org/2001/XMLSchema" xsi:type="q42:int">1</Threshold>
+                  <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+                </FillDynamicThresholdData>
+              </Source>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="Group" Rotation="0" ID="C1" IsTabSelectable="false" TabOrder="0">
+          <Objects>
+            <HmiObject xsi:type="Line" Rotation="43" ID="C1B" IsTabSelectable="false" TabOrder="0" LineColor="#FFFFFFFF" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+              <Origin>
+                <X>49.999999999999886</X>
+                <Y>46.96033402922768</Y>
+              </Origin>
+              <Location>
+                <X>49.999999999999886</X>
+                <Y>46.96033402922768</Y>
+              </Location>
+              <TransformCenter>
+                <X>0</X>
+                <Y>0</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+              <DashStyle>
+                <Offset>0</Offset>
+                <Dashes />
+              </DashStyle>
+              <SubPaths IsClosed="false">
+                <Start>
+                  <X>0</X>
+                  <Y>0</Y>
+                </Start>
+                <Segments xsi:type="LinePathSegment">
+                  <End>
+                    <X>46.00000000000002</X>
+                    <Y>0</Y>
+                  </End>
+                </Segments>
+              </SubPaths>
+            </HmiObject>
+            <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="C1A" IsTabSelectable="false" TabOrder="0">
+              <Origin>
+                <X>-5.8678272828756964E-15</X>
+                <Y>6.689093723366568E-15</Y>
+              </Origin>
+              <Location>
+                <X>0</X>
+                <Y>-0.07962552192066141</Y>
+              </Location>
+              <TransformCenter>
+                <X>-5.8678272828756964E-15</X>
+                <Y>0.0796255219206681</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Scale>
+                <Height>1.5925104384133604</Height>
+                <Width>1.5925104384133604</Width>
+              </Scale>
+              <SymbolId>61abfec3-4ab4-4760-a692-e747fa8a9b79</SymbolId>
+              <Parameters>
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="f661f7e7-e5f2-4ce8-9d66-53cfea219563" Source="=C1" />
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="0ffc7ff9-8254-4ff7-8e5b-f5d54c1f1f89" Source="Tank" />
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="d53767d3-b7d7-4568-955a-6c4f7640b822">
+                  <Source xmlns:q43="http://www.w3.org/2001/XMLSchema" xsi:type="q43:double">7</Source>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="b52f61ec-db11-414d-a7e9-c38a37d31ed9">
+                  <Source xmlns:q44="http://www.w3.org/2001/XMLSchema" xsi:type="q44:double">9</Source>
+                </Parameter>
+              </Parameters>
+            </HmiObject>
+          </Objects>
+          <Origin>
+            <X>832</X>
+            <Y>137</Y>
+          </Origin>
+          <Location>
+            <X>832</X>
+            <Y>137</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+        </HmiObject>
+        <HmiObject xsi:type="Group" Rotation="0" ID="EB1" IsTabSelectable="false" TabOrder="0">
+          <Objects>
+            <HmiObject xsi:type="Line" Rotation="0" ID="EB1B" IsTabSelectable="false" TabOrder="0" LineColor="#FFFFFFFF" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+              <Origin>
+                <X>111</X>
+                <Y>25.5</Y>
+              </Origin>
+              <Location>
+                <X>111</X>
+                <Y>25.5</Y>
+              </Location>
+              <TransformCenter>
+                <X>0</X>
+                <Y>0</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+              <DashStyle>
+                <Offset>0</Offset>
+                <Dashes />
+              </DashStyle>
+              <SubPaths IsClosed="false">
+                <Start>
+                  <X>0</X>
+                  <Y>0</Y>
+                </Start>
+                <Segments xsi:type="LinePathSegment">
+                  <End>
+                    <X>46.00000000000002</X>
+                    <Y>0</Y>
+                  </End>
+                </Segments>
+              </SubPaths>
+            </HmiObject>
+            <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="EB1A" IsTabSelectable="false" TabOrder="0">
+              <Origin>
+                <X>-8.258280790779433E-31</X>
+                <Y>0</Y>
+              </Origin>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <TransformCenter>
+                <X>-8.258280790779433E-31</X>
+                <Y>0</Y>
+              </TransformCenter>
+              <EnableSecurityScope>Always</EnableSecurityScope>
+              <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+              <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+              <VisibleSecurityScope>Always</VisibleSecurityScope>
+              <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+              <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+              <Scale>
+                <Height>2.124999999999999</Height>
+                <Width>2.124999999999999</Width>
+              </Scale>
+              <SymbolId>aec2d5a4-30a2-4f1e-9500-0adfdb9112b6</SymbolId>
+              <Parameters>
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="f8f1bfd5-8136-4ced-afea-f12c3fcf5735" Source="=EB1" />
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="c7aedf84-7623-4d2b-af26-c620cedd3167">
+                  <Source xmlns:q45="http://www.w3.org/2001/XMLSchema" xsi:type="q45:double">9</Source>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingProperty" ParameterID="6f1a7c48-98c0-4eb2-b7e9-9026b292de29">
+                  <Source xmlns:q46="http://www.w3.org/2001/XMLSchema" xsi:type="q46:double">7</Source>
+                </Parameter>
+                <Parameter xsi:type="ParameterBindingConstant" ParameterID="c45f8ff8-115c-4acb-9376-58f8e419d465" Source="Heater" />
+              </Parameters>
+            </HmiObject>
+          </Objects>
+          <Origin>
+            <X>680</X>
+            <Y>670</Y>
+          </Origin>
+          <Location>
+            <X>680</X>
+            <Y>670</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+        </HmiObject>
+        <HmiObject xsi:type="HmiText" Rotation="0" ID="PageHeader" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Container" FontFamily="Arial" FontSize="52" FontStyle="normal" FontWeight="700" FontColor="#FF8ACCD1" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" TextWrapping="WrapWithOverflow">
+          <Origin>
+            <X>40</X>
+            <Y>11.000000000000007</Y>
+          </Origin>
+          <Location>
+            <X>40</X>
+            <Y>11.000000000000007</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>250</Width>
+            <Height>76</Height>
+          </Size>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="IN" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>29</X>
+            <Y>168</Y>
+          </Origin>
+          <Location>
+            <X>28.807297897795248</X>
+            <Y>167.87394957983193</Y>
+          </Location>
+          <TransformCenter>
+            <X>0.19270210220475142</X>
+            <Y>0.1260504201680672</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1.260504201680672</Height>
+            <Width>1.1463539690942972</Width>
+          </Scale>
+          <SymbolId>480400e8-d029-44bd-930f-2936966a3c40</SymbolId>
+        </HmiObject>
+        <HmiObject xsi:type="HmiPipe" Rotation="0" ID="Object1" IsTabSelectable="false" TabOrder="0" LineColor="#FF0098A1" LineWidth="20" FontFamily="Tahoma" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Flat" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="Pipe" ShowBulkheads="false" OutlineColor="#FFFFFFFF">
+          <Origin>
+            <X>690</X>
+            <Y>286</Y>
+          </Origin>
+          <Location>
+            <X>690</X>
+            <Y>286</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="FillDynamic" TargetProperty="LineColor" Interpolate="false" Rate="None">
+            <VariableInstance>
+              <Name>Intake</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>Intake</ExpressionLine>
+            </Expression>
+            <ThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q47="http://www.w3.org/2001/XMLSchema" xsi:type="q47:int">0</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF3E3D40" />
+              </FillDynamicThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q48="http://www.w3.org/2001/XMLSchema" xsi:type="q48:int">1</Threshold>
+                <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+              </FillDynamicThresholdData>
+            </ThresholdData>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <SubPaths IsClosed="false">
+            <Start>
+              <X>0</X>
+              <Y>0</Y>
+            </Start>
+            <Segments xsi:type="LinePathSegment">
+              <End>
+                <X>-190</X>
+                <Y>0</Y>
+              </End>
+            </Segments>
+            <Segments xsi:type="LinePathSegment">
+              <End>
+                <X>-190</X>
+                <Y>-104</Y>
+              </End>
+            </Segments>
+            <Segments xsi:type="LinePathSegment">
+              <End>
+                <X>-543</X>
+                <Y>-104</Y>
+              </End>
+            </Segments>
+          </SubPaths>
+        </HmiObject>
+        <HmiObject xsi:type="HmiPipe" Rotation="0" ID="Object2" IsTabSelectable="false" TabOrder="0" LineColor="#FF0098A1" LineWidth="20" FontFamily="Tahoma" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Flat" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="Pipe" ShowBulkheads="false" OutlineColor="#FFFFFF">
+          <Origin>
+            <X>1022</X>
+            <Y>484</Y>
+          </Origin>
+          <Location>
+            <X>1022</X>
+            <Y>484</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="FillDynamic" TargetProperty="LineColor" Interpolate="false" Rate="None">
+            <VariableInstance>
+              <Name>Drain</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>Drain</ExpressionLine>
+            </Expression>
+            <ThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q49="http://www.w3.org/2001/XMLSchema" xsi:type="q49:int">0</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF3E3D40" />
+              </FillDynamicThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q50="http://www.w3.org/2001/XMLSchema" xsi:type="q50:int">1</Threshold>
+                <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+              </FillDynamicThresholdData>
+            </ThresholdData>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <SubPaths IsClosed="false">
+            <Start>
+              <X>0</X>
+              <Y>0</Y>
+            </Start>
+            <Segments xsi:type="LinePathSegment">
+              <End>
+                <X>31.000000000000036</X>
+                <Y>0</Y>
+              </End>
+            </Segments>
+          </SubPaths>
+        </HmiObject>
+        <HmiObject xsi:type="HmiPipe" Rotation="0" ID="Object3" IsTabSelectable="false" TabOrder="0" LineColor="#FF0098A1" LineWidth="20" FontFamily="Tahoma" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Flat" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="Pipe" ShowBulkheads="false" OutlineColor="#FFFFFF">
+          <Origin>
+            <X>1161.0000000000002</X>
+            <Y>484</Y>
+          </Origin>
+          <Location>
+            <X>1161.0000000000002</X>
+            <Y>484</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="FillDynamic" TargetProperty="LineColor" Interpolate="false" Rate="None">
+            <VariableInstance>
+              <Name>Drain</Name>
+            </VariableInstance>
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>Drain</ExpressionLine>
+            </Expression>
+            <ThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q51="http://www.w3.org/2001/XMLSchema" xsi:type="q51:int">0</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF3E3D40" />
+              </FillDynamicThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q52="http://www.w3.org/2001/XMLSchema" xsi:type="q52:int">1</Threshold>
+                <Value xsi:type="SolidFill" Color="#FFC75CFF" />
+              </FillDynamicThresholdData>
+            </ThresholdData>
+          </Dynamic>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <SubPaths IsClosed="false">
+            <Start>
+              <X>0</X>
+              <Y>0</Y>
+            </Start>
+            <Segments xsi:type="LinePathSegment">
+              <End>
+                <X>570.9999999999999</X>
+                <Y>0</Y>
+              </End>
+            </Segments>
+          </SubPaths>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SymbolInstance1" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>609.0000000000001</X>
+            <Y>822.0000000000002</Y>
+          </Origin>
+          <Location>
+            <X>609</X>
+            <Y>906.0000000000002</Y>
+          </Location>
+          <TransformCenter>
+            <X>9.947598300641403E-14</X>
+            <Y>-83.99999999999997</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1</Height>
+            <Width>1</Width>
+          </Scale>
+          <SymbolName>AlarmTable</SymbolName>
+        </HmiObject>
+        <HmiObject xsi:type="Button" Rotation="0" ID="Button1" IsTabSelectable="true" TabOrder="0" NextId="2" LineColor="#FFECEDED" LineWidth="1" Text="de" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF8ACCD1" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" IsLatching="false" IsDefault="false" ImpulseTime="0" ImagePlacement="Left" ImageAreaWidthUnits="Percent" ImageAreaHeightUnits="Percent" Margin="0" ImageWhenDownId="00000000-0000-0000-0000-000000000000" ImageScaling="Fill">
+          <Origin>
+            <X>1794</X>
+            <Y>71</Y>
+          </Origin>
+          <Location>
+            <X>1794</X>
+            <Y>71</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="FillDynamic" TargetProperty="Fill" Interpolate="false" Rate="None">
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>LanguageCode = "de"</ExpressionLine>
+            </Expression>
+            <ThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q53="http://www.w3.org/2001/XMLSchema" xsi:type="q53:int">0</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF3E3D40" />
+              </FillDynamicThresholdData>
+              <FillDynamicThresholdData Blink="true">
+                <Threshold xmlns:q54="http://www.w3.org/2001/XMLSchema" xsi:type="q54:int">1</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF344C4C" />
+              </FillDynamicThresholdData>
+            </ThresholdData>
+          </Dynamic>
+          <Action xsi:type="WriteValueAction" Gesture="Click" ID="A1" SourceType="Constant" SourceConstant="de">
+            <DestinationVariableInstance>
+              <Name>LanguageCode</Name>
+            </DestinationVariableInstance>
+          </Action>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#FF3E3D40" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>68.00000000000051</Width>
+            <Height>40</Height>
+          </Size>
+          <FillWhenDown xsi:type="SolidFill" Color="#FF8ACCD1" />
+          <ImageArea>
+            <Width>50</Width>
+            <Height>50</Height>
+          </ImageArea>
+          <CornerRadii>
+            <Width>4</Width>
+            <Height>4</Height>
+          </CornerRadii>
+        </HmiObject>
+        <HmiObject xsi:type="Button" Rotation="0" ID="Button2" IsTabSelectable="true" TabOrder="0" NextId="2" LineColor="#FFECEDED" LineWidth="1" Text="en" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF8ACCD1" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" IsLatching="false" IsDefault="false" ImpulseTime="0" ImagePlacement="Left" ImageAreaWidthUnits="Percent" ImageAreaHeightUnits="Percent" Margin="0" ImageWhenDownId="00000000-0000-0000-0000-000000000000" ImageScaling="Fill">
+          <Origin>
+            <X>1697</X>
+            <Y>71</Y>
+          </Origin>
+          <Location>
+            <X>1697</X>
+            <Y>71</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Dynamic xsi:type="FillDynamic" TargetProperty="Fill" Interpolate="false" Rate="None">
+            <Expression xsi:type="SimpleSTExpression">
+              <ExpressionLine>LanguageCode = "en"</ExpressionLine>
+            </Expression>
+            <ThresholdData>
+              <FillDynamicThresholdData Blink="false">
+                <Threshold xmlns:q55="http://www.w3.org/2001/XMLSchema" xsi:type="q55:int">0</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF3E3D40" />
+              </FillDynamicThresholdData>
+              <FillDynamicThresholdData Blink="true">
+                <Threshold xmlns:q56="http://www.w3.org/2001/XMLSchema" xsi:type="q56:int">1</Threshold>
+                <Value xsi:type="SolidFill" Color="#FF344C4C" />
+              </FillDynamicThresholdData>
+            </ThresholdData>
+          </Dynamic>
+          <Action xsi:type="WriteValueAction" Gesture="Click" ID="A1" SourceType="Constant" SourceConstant="en">
+            <DestinationVariableInstance>
+              <Name>LanguageCode</Name>
+            </DestinationVariableInstance>
+          </Action>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#FF3E3D40" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>68.00000000000051</Width>
+            <Height>40</Height>
+          </Size>
+          <FillWhenDown xsi:type="SolidFill" Color="#FF8ACCD1" />
+          <ImageArea>
+            <Width>50</Width>
+            <Height>50</Height>
+          </ImageArea>
+          <CornerRadii>
+            <Width>4</Width>
+            <Height>4</Height>
+          </CornerRadii>
+        </HmiObject>
+        <HmiObject xsi:type="Button" Rotation="0" ID="Button3" IsTabSelectable="true" TabOrder="0" NextId="1" LineColor="#FFCCD0D2" LineWidth="1" Text="Robot" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FFECEDED" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" IsLatching="false" IsDefault="false" ImpulseTime="0" ImagePlacement="Left" ImageAreaWidthUnits="Percent" ImageAreaHeightUnits="Percent" Margin="0" ImageWhenDownId="00000000-0000-0000-0000-000000000000" ImageScaling="Fill">
+          <Origin>
+            <X>1743</X>
+            <Y>986</Y>
+          </Origin>
+          <Location>
+            <X>1743</X>
+            <Y>986</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Action xsi:type="LoadPageAction" Gesture="Click" ID="A0" Page="8dc946b0-83c1-4937-a981-3ed7c167577a" />
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#FF3E3D40" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>120</Width>
+            <Height>40</Height>
+          </Size>
+          <FillWhenDown xsi:type="SolidFill" Color="#FF8ACCD1" />
+          <ImageArea>
+            <Width>50</Width>
+            <Height>50</Height>
+          </ImageArea>
+          <CornerRadii>
+            <Width>4</Width>
+            <Height>4</Height>
+          </CornerRadii>
+        </HmiObject>
+      </Objects>
+    </Layer>
+  </Layers>
+  <Size>
+    <Width>1920</Width>
+    <Height>1080</Height>
+  </Size>
+  <MarginColorString>#FF000000</MarginColorString>
+  <AvailableSecurityScope>Always</AvailableSecurityScope>
+  <AvailableSecurityScopeOperator>Equal</AvailableSecurityScopeOperator>
+  <AvailableSecurityScopeLevel>0</AvailableSecurityScopeLevel>
+  <Fill xsi:type="SolidFill" Color="#FF3E3D40" />
+</HmiPage>

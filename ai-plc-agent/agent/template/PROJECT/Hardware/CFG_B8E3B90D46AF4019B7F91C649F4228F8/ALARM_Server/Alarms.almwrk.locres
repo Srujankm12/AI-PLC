@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextResourceID>124</NextResourceID>
+  <Languages ID="0" Name="Default" />
+  <Languages ID="1" Name="de" />
+  <Resources ID="106" Name="Control.HeO.Message">
+    <Values LanguageID="0" LocalValue="Heater on" />
+    <Values LanguageID="1" LocalValue="Heizung ein" />
+  </Resources>
+  <Resources ID="107" Name="Control.HeO.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="108" Name="Control.InO.Message">
+    <Values LanguageID="0" LocalValue="Intake open" />
+    <Values LanguageID="1" LocalValue="Zulauf offen" />
+  </Resources>
+  <Resources ID="109" Name="Control.InO.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="110" Name="Control.DrO.Message">
+    <Values LanguageID="0" LocalValue="Drain open" />
+    <Values LanguageID="1" LocalValue="Ablauf offen" />
+  </Resources>
+  <Resources ID="111" Name="Control.DrO.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="112" Name="Level.LVL.Message">
+    <Values LanguageID="0" LocalValue="Level LO" />
+    <Values LanguageID="1" LocalValue="Pegel LO" />
+  </Resources>
+  <Resources ID="113" Name="Level.LVL.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="114" Name="Level.LVLL.Message">
+    <Values LanguageID="0" LocalValue="Level LOLO" />
+    <Values LanguageID="1" LocalValue="Pegel LOLO" />
+  </Resources>
+  <Resources ID="115" Name="Level.LVLL.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="116" Name="Level.LVH.Message">
+    <Values LanguageID="0" LocalValue="Level HI" />
+    <Values LanguageID="1" LocalValue="Pegel HI" />
+  </Resources>
+  <Resources ID="117" Name="Level.LVH.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="118" Name="Level.LVHH.Message">
+    <Values LanguageID="0" LocalValue="Level HIHI" />
+    <Values LanguageID="1" LocalValue="Pegel HIHI" />
+  </Resources>
+  <Resources ID="119" Name="Level.LVHH.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="120" Name="Temp.HU.Message">
+    <Values LanguageID="0" LocalValue="Temp low" />
+    <Values LanguageID="1" LocalValue="Temp niedrig" />
+  </Resources>
+  <Resources ID="121" Name="Temp.HU.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+  <Resources ID="122" Name="Temp.HO.Message">
+    <Values LanguageID="0" LocalValue="Temp high" />
+    <Values LanguageID="1" LocalValue="Temp hoch" />
+  </Resources>
+  <Resources ID="123" Name="Temp.HO.Description">
+    <Values LanguageID="0" LocalValue="" />
+  </Resources>
+</ResourcesDocument>

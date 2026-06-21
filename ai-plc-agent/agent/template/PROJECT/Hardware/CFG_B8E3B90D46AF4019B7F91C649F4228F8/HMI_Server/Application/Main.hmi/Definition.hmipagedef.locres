@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextResourceID>157</NextResourceID>
+  <Languages ID="0" Name="Default" />
+  <Languages ID="1" Name="de" />
+  <Resources ID="108" Name="TValue.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="109" Name="TUnit.Text">
+    <Values LanguageID="0" LocalValue="°C" />
+  </Resources>
+  <Resources ID="110" Name="LValue.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="111" Name="LUnit.Text">
+    <Values LanguageID="0" LocalValue="l" />
+  </Resources>
+  <Resources ID="112" Name="SetPointMinTemp.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="113" Name="SetPointMaxTemp.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="114" Name="TSetPointsTemp.Text">
+    <Values LanguageID="0" LocalValue="°C&#xD;&#xA;Set Points Temp" />
+    <Values LanguageID="1" LocalValue="°C\nSollwerte Temp" />
+  </Resources>
+  <Resources ID="115" Name="SetPointMinLevel.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="116" Name="SetPointMaxLevel.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="117" Name="TSetPointsLevel.Text">
+    <Values LanguageID="0" LocalValue="Liters\nSet Points Level" />
+    <Values LanguageID="1" LocalValue="Liter\nSollwerte Pegel" />
+  </Resources>
+  <Resources ID="119" Name="PageHeader.Text">
+    <Values LanguageID="0" LocalValue="Container" />
+    <Values LanguageID="1" LocalValue="Container" />
+  </Resources>
+  <Resources ID="138" Name="Button1.Text">
+    <Values LanguageID="0" LocalValue="de" />
+  </Resources>
+  <Resources ID="139" Name="Button2.Text">
+    <Values LanguageID="0" LocalValue="en" />
+  </Resources>
+  <Resources ID="140" Name="Button3.Text">
+    <Values LanguageID="0" LocalValue="Robot" />
+    <Values LanguageID="1" LocalValue="Roboter" />
+  </Resources>
+  <Resources ID="149" Name="EB1A.Parameters.Value1.Source">
+    <Values LanguageID="0" LocalValue="=EB1" />
+  </Resources>
+  <Resources ID="150" Name="EB1A.Parameters.Value2.Source">
+    <Values LanguageID="0" LocalValue="Heater" />
+  </Resources>
+  <Resources ID="151" Name="C1A.Parameters.Value1.Source">
+    <Values LanguageID="0" LocalValue="=C1" />
+  </Resources>
+  <Resources ID="152" Name="C1A.Parameters.Value2.Source">
+    <Values LanguageID="0" LocalValue="Tank" />
+  </Resources>
+  <Resources ID="153" Name="K1A.Parameters.Value1.Source">
+    <Values LanguageID="0" LocalValue="=K1" />
+  </Resources>
+  <Resources ID="154" Name="K1A.Parameters.Value2.Source">
+    <Values LanguageID="0" LocalValue="Intake" />
+  </Resources>
+  <Resources ID="155" Name="K2A.Parameters.Value1.Source">
+    <Values LanguageID="0" LocalValue="=K2" />
+  </Resources>
+  <Resources ID="156" Name="K2A.Parameters.Value2.Source">
+    <Values LanguageID="0" LocalValue="Drain" />
+  </Resources>
+</ResourcesDocument>

@@ -1,0 +1,15 @@
+{
+  "CertificatePath": "",
+  "TimestampServerUri": null,
+  "TimestampServerCredentials": {
+    "UserName": "",
+    "Domain": ""
+  },
+  "TimestampServerProxy": {
+    "ProxyUri": null,
+    "ProxyCredentials": {
+      "UserName": "",
+      "Domain": ""
+    }
+  }
+}

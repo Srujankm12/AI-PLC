@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HmiConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" IsLocalInitialized="false" IsShowGrid="false" IsSnapToGrid="false" SnapToGridCellSize="50" SnapToGridLineColor="Fuchsia" GeneratorRunCounter="0">
+  <Name>HMI Configuration</Name>
+  <RecentlyUsedColors>
+    <Color>
+      <A>255</A>
+      <R>199</R>
+      <G>92</G>
+      <B>255</B>
+      <ScA>1</ScA>
+      <ScR>0.57112485</ScR>
+      <ScG>0.107023105</ScG>
+      <ScB>1</ScB>
+    </Color>
+    <Color>
+      <A>255</A>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+      <ScA>1</ScA>
+      <ScR>1</ScR>
+      <ScG>1</ScG>
+      <ScB>1</ScB>
+    </Color>
+    <Color>
+      <A>255</A>
+      <R>148</R>
+      <G>0</G>
+      <B>211</B>
+      <ScA>1</ScA>
+      <ScR>0.2961383</ScR>
+      <ScG>0</ScG>
+      <ScB>0.65140563</ScB>
+    </Color>
+    <Color>
+      <A>255</A>
+      <R>0</R>
+      <G>255</G>
+      <B>0</B>
+      <ScA>1</ScA>
+      <ScR>0</ScR>
+      <ScG>1</ScG>
+      <ScB>0</ScB>
+    </Color>
+  </RecentlyUsedColors>
+  <RecentlyUsedGradients>
+    <GradientFill xsi:type="LinearGradientFill" SpreadMethod="Pad">
+      <Stop Color="#FF000004" Offset="0" />
+      <Stop Color="#FFF0F40B" Offset="0.79" />
+      <Stop Color="#FFFB0404" Offset="0.48" />
+      <StartPoint>
+        <X>0.05502392344497608</X>
+        <Y>0.02631578947368421</Y>
+      </StartPoint>
+      <EndPoint>
+        <X>1.0454545454545454</X>
+        <Y>1.007177033492823</Y>
+      </EndPoint>
+    </GradientFill>
+    <GradientFill xsi:type="LinearGradientFill" SpreadMethod="Pad">
+      <Stop Color="#FFFF0000" Offset="0" />
+      <Stop Color="#FFFFFFFF" Offset="0.4" />
+      <Stop Color="#FF3B15F7" Offset="0.99" />
+      <Stop Color="#FFFFFFFC" Offset="0.61" />
+      <StartPoint>
+        <X>0.004784688995215311</X>
+        <Y>0.019138755980861243</Y>
+      </StartPoint>
+      <EndPoint>
+        <X>0.9808612440191388</X>
+        <Y>0.9330143540669856</Y>
+      </EndPoint>
+    </GradientFill>
+    <GradientFill xsi:type="LinearGradientFill" SpreadMethod="Pad">
+      <Stop Color="#FF000004" Offset="0" />
+      <Stop Color="#FFF4D80B" Offset="1" />
+      <Stop Color="#FFFB0404" Offset="0.45" />
+      <StartPoint>
+        <X>-0.023923444976076555</X>
+        <Y>0.3875598086124402</Y>
+      </StartPoint>
+      <EndPoint>
+        <X>1.0047846889952152</X>
+        <Y>0.3875598086124402</Y>
+      </EndPoint>
+    </GradientFill>
+    <GradientFill xsi:type="LinearGradientFill" SpreadMethod="Pad">
+      <Stop Color="#FFFF0000" Offset="0" />
+      <Stop Color="#FFFFFFFF" Offset="0.89" />
+      <Stop Color="#FF3B15F7" Offset="0.52" />
+      <StartPoint>
+        <X>0.004784688995215311</X>
+        <Y>0.019138755980861243</Y>
+      </StartPoint>
+      <EndPoint>
+        <X>0.9808612440191388</X>
+        <Y>0.9330143540669856</Y>
+      </EndPoint>
+    </GradientFill>
+    <GradientFill xsi:type="LinearGradientFill" SpreadMethod="Pad">
+      <Stop Color="#FF0000FF" Offset="0" />
+      <Stop Color="#FFFFFFFF" Offset="0.81" />
+      <Stop Color="#FFF30B0B" Offset="0.51" />
+      <StartPoint>
+        <X>-0.023923444976076555</X>
+        <Y>0.3875598086124402</Y>
+      </StartPoint>
+      <EndPoint>
+        <X>1.0047846889952152</X>
+        <Y>0.3875598086124402</Y>
+      </EndPoint>
+    </GradientFill>
+    <GradientFill xsi:type="LinearGradientFill" SpreadMethod="Pad">
+      <Stop Color="#FFFF0000" Offset="0" />
+      <Stop Color="#FF0B13F4" Offset="1" />
+      <Stop Color="#FFFFF8FF" Offset="0.36" />
+      <Stop Color="#FFFFFFFA" Offset="0.65" />
+      <StartPoint>
+        <X>-0.023923444976076555</X>
+        <Y>0.3875598086124402</Y>
+      </StartPoint>
+      <EndPoint>
+        <X>1.0047846889952152</X>
+        <Y>0.3875598086124402</Y>
+      </EndPoint>
+    </GradientFill>
+  </RecentlyUsedGradients>
+  <ImageLocation>C:\Users\9qc6m4\Pictures</ImageLocation>
+  <HmiSupportLocation>C:\Users\9qc6m4\Documents</HmiSupportLocation>
+  <RotationRounding>15</RotationRounding>
+</HmiConfiguration>
