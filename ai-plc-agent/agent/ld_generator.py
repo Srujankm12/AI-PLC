@@ -1,84 +1,41 @@
 """
 ld_generator.py
 Generates Code.nold XML (PLCnext Ladder Diagram) from the JSON AST.
-Handles AND (series), OR (parallel), NOT (negated contacts), and
-multiple rungs with auto-incrementing localIds and execution order.
+
+Uses a stage-based model:
+  Stage  = one column of contacts.
+  Single contact  → series step.
+  Multiple contacts → OR (parallel) group drawn at the same X, different Y.
+
+Example: '(StartButton OR Motor) AND NOT(StopButton) AND NOT(EmergencyStop)'
+  stages = [
+    [Contact(StartButton), Contact(Motor)],   ← parallel (OR) at x=16
+    [Contact(StopButton, negated=True)],      ← series at x=36
+    [Contact(EmergencyStop, negated=True)],   ← series at x=56
+  ]
 """
 
 import re
 from xml.sax.saxutils import escape
 
 
-# ── Expression parser ────────────────────────────────────────────────────────
+# ── Data model ────────────────────────────────────────────────────────────────
 
 class Contact:
-    """Represents a single ladder contact."""
     def __init__(self, name: str, negated: bool = False):
         self.name    = name
         self.negated = negated
 
 
-class Rung:
-    """Parsed representation of one rung's logic."""
-    def __init__(self, contacts: list, parallel_groups: list, output: str, coil_type: str, comment: str):
-        # contacts: list of Contact for series (AND) path
-        # parallel_groups: list of list-of-Contact for OR branches
-        self.contacts        = contacts
-        self.parallel_groups = parallel_groups
-        self.output          = output
-        self.coil_type       = coil_type
-        self.comment         = comment
-
-
-def _parse_token(token: str) -> Contact:
-    """Parse a single token into a Contact, handling NOT()."""
-    token = token.strip()
-    m = re.match(r'^NOT\((.+)\)$', token, re.IGNORECASE)
-    if m:
-        return Contact(m.group(1).strip(), negated=True)
-    return Contact(token)
-
-
-def _parse_expression(expr: str) -> tuple:
-    """
-    Returns (series_contacts, parallel_groups).
-
-    Strategy:
-      1. Top-level OR  → parallel branches, each branch parsed for AND
-      2. Top-level AND → series contacts
-      3. Mixed: evaluate left-to-right respecting parentheses
-
-    Returns:
-      series   – list[Contact]  (for a pure AND path)
-      parallel – list[list[Contact]]  (for OR branches; empty if no OR)
-    """
-    expr = expr.strip()
-
-    # Split on top-level OR (respecting parentheses)
-    or_parts = _split_top_level(expr, 'OR')
-
-    if len(or_parts) > 1:
-        # OR logic → parallel groups
-        parallel_groups = []
-        for part in or_parts:
-            and_parts = _split_top_level(part.strip(), 'AND')
-            branch = [_parse_token(t) for t in and_parts]
-            parallel_groups.append(branch)
-        return [], parallel_groups
-    else:
-        # No top-level OR → may be AND chain or single token
-        and_parts = _split_top_level(expr, 'AND')
-        series = [_parse_token(t) for t in and_parts]
-        return series, []
-
+# ── Expression parser ─────────────────────────────────────────────────────────
 
 def _split_top_level(expr: str, operator: str) -> list:
-    """Split expr on `operator` only at the top nesting level."""
-    parts  = []
-    depth  = 0
+    """Split expr on `operator` keyword only at top nesting level."""
+    parts   = []
+    depth   = 0
     current = ""
-    op     = f" {operator} "
-    i      = 0
+    op      = f" {operator} "
+    i       = 0
     while i < len(expr):
         ch = expr[i]
         if ch == '(':
@@ -90,7 +47,8 @@ def _split_top_level(expr: str, operator: str) -> list:
             current += ch
             i += 1
         elif depth == 0 and expr[i:].upper().startswith(op.upper()):
-            parts.append(current.strip())
+            if current.strip():
+                parts.append(current.strip())
             current = ""
             i += len(op)
         else:
@@ -98,10 +56,69 @@ def _split_top_level(expr: str, operator: str) -> list:
             i += 1
     if current.strip():
         parts.append(current.strip())
-    return parts
+    return parts if parts else [expr]
 
 
-# ── XML helpers ──────────────────────────────────────────────────────────────
+def _strip_outer_parens(s: str) -> str:
+    """Remove wrapping parentheses only when they span the whole string."""
+    s = s.strip()
+    if not (s.startswith('(') and s.endswith(')')):
+        return s
+    depth = 0
+    for i, ch in enumerate(s):
+        if ch == '(':
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+            if depth == 0 and i < len(s) - 1:
+                return s   # outer ( closed before end → not fully wrapping
+    return s[1:-1].strip()
+
+
+def _parse_token(token: str) -> Contact:
+    """Parse one leaf token into a Contact, handling NOT(…)."""
+    token = token.strip()
+    m = re.match(r'^NOT\((.+)\)$', token, re.IGNORECASE)
+    if m:
+        return Contact(m.group(1).strip(), negated=True)
+    return Contact(token)
+
+
+def parse_expression_to_stages(expr: str) -> list:
+    """
+    Returns list[list[Contact]].
+
+    Algorithm:
+      1. Top-level AND split → each part becomes a stage.
+      2. If a part is fully wrapped in parens and contains top-level OR
+         → parallel stage (multiple contacts, same X).
+      3. Otherwise → series stage (single contact).
+    """
+    expr = expr.strip()
+    and_parts = _split_top_level(expr, 'AND')
+
+    stages = []
+    for part in and_parts:
+        part     = part.strip()
+        stripped = _strip_outer_parens(part)
+        if stripped != part:
+            # Was parenthesised — check for top-level OR inside
+            or_parts = _split_top_level(stripped, 'OR')
+            if len(or_parts) > 1:
+                stages.append([_parse_token(t) for t in or_parts])
+                continue
+        # Check for top-level OR without outer parens (e.g. pure-OR expression)
+        or_parts = _split_top_level(part, 'OR')
+        if len(or_parts) > 1:
+            stages.append([_parse_token(t) for t in or_parts])
+            continue
+        # Single token (possibly NOT(…))
+        stages.append([_parse_token(part)])
+
+    return stages if stages else [[Contact("Output")]]
+
+
+# ── XML helpers ───────────────────────────────────────────────────────────────
 
 def _connection_info() -> str:
     return (
@@ -121,9 +138,8 @@ def _object_info(network_id: int) -> str:
 # ── Main generator ────────────────────────────────────────────────────────────
 
 def generate(ast: dict) -> str:
-    rungs_ast = ast.get("rungs", [])
-
-    id_counter   = [0]   # mutable counter shared across helpers
+    rungs_ast    = ast.get("rungs", [])
+    id_counter   = [0]
     exec_counter = [0]
 
     def next_id() -> int:
@@ -135,25 +151,56 @@ def generate(ast: dict) -> str:
         return exec_counter[0]
 
     networks_xml = []
-    base_y       = 4   # y for label row; actual elements at base_y + 4
+    current_y    = 4    # running vertical position shared across rungs
 
     for rung_index, rung_ast in enumerate(rungs_ast):
         network_id  = rung_index + 1
-        rung_y      = base_y + rung_index * 24   # separate rungs vertically
-        elements_y  = rung_y + 4
+        rung_y      = current_y
+        elements_y  = rung_y + 4   # contacts/coil row
 
         comment     = escape(rung_ast.get("comment", f"Network {network_id}"))
         output_name = escape(rung_ast.get("output", "Output"))
         coil_type   = rung_ast.get("type", "coil").lower()
         expr        = rung_ast.get("expression", output_name)
 
-        series, parallel = _parse_expression(expr)
+        stages           = parse_expression_to_stages(expr)
+        num_first_branches = len(stages[0])
 
-        # ── Label ────────────────────────────────────────────────────────────
+        # Reserve vertical space: max branches × 12, minimum 24, plus 8 padding
+        rung_height  = max(24, num_first_branches * 12 + 8)
+        current_y   += rung_height
+
+        # ── Pre-assign IDs ────────────────────────────────────────────────────
         label_id   = next_id()
         label_exec = next_exec()
-        inner_net  = label_id + 1   # network localId = label + 1 by convention
+        lpr_id     = next_id()
+        lpr_exec   = next_exec()
 
+        # stage_ids[i][j] = localId for stage i, branch j
+        stage_ids   = [[next_id() for _ in stage] for stage in stages]
+        stage_execs = [[next_exec() for _ in stage] for stage in stages]
+
+        coil_id   = next_id()
+        coil_exec = next_exec()
+        rpr_id    = next_id()
+        rpr_exec  = next_exec()
+
+        # ── Geometry ──────────────────────────────────────────────────────────
+        # Each stage column is 20 units wide; contacts are 18 wide, gap=2
+        stage_x = [16 + i * 20 for i in range(len(stages))]
+        coil_x  = 16 + len(stages) * 20
+        rpr_x   = coil_x + 20
+
+        def contact_y(stage_i: int, branch_j: int) -> int:
+            # Stage-0 branches fan out vertically; later stages align to top branch
+            if stage_i == 0:
+                return elements_y + branch_j * 12
+            return elements_y   # series contacts always at top-branch row
+
+        lpr_height = 4 + max(0, num_first_branches - 1) * 12
+
+        # ── Label ─────────────────────────────────────────────────────────────
+        inner_net = label_id + 1
         label_xml = (
             f'<label localId="{label_id}" height="4" width="160" '
             f'label="Network{network_id}" executionOrderId="{label_exec}">'
@@ -167,160 +214,94 @@ def generate(ast: dict) -> str:
         )
 
         # ── Left power rail ───────────────────────────────────────────────────
-        lpr_id   = next_id()
-        lpr_exec = next_exec()
-        lpr_x    = 10
+        # One connectionPointOut per branch in stage 0
+        lpr_conn_outs = ""
+        for j in range(num_first_branches):
+            rel_y     = 2 + j * 12   # relative y from top of LPR
+            target_id = stage_ids[0][j]
+            lpr_conn_outs += (
+                f'<connectionPointOut formalParameter="{j + 1}">'
+                f'<relPosition x="3" y="{rel_y}"/>'
+                f'<addData><data name="linkInformation" handleUnknown="preserve">'
+                f'<linkInformation executionOrder="{lpr_exec + 1}" localId="{target_id}"/>'
+                f'</data></addData></connectionPointOut>'
+            )
 
-        # Determine what the LPR connects to (first contact or coil if no contacts)
-        # We'll wire it after building the chain; placeholder, patched below.
+        lpr_xml = (
+            f'<leftPowerRail localId="{lpr_id}" height="{lpr_height}" width="3" '
+            f'executionOrderId="{lpr_exec}">'
+            f'<position x="10" y="{elements_y - 2}"/>'
+            f'{lpr_conn_outs}'
+            f'{_object_info(network_id)}</leftPowerRail>'
+        )
 
-        # ── Build contact chain ───────────────────────────────────────────────
-        contact_xmls  = []
-        contact_ids   = []
-        contact_x_map = {}   # contact_id → x
+        # ── Contacts ──────────────────────────────────────────────────────────
+        contact_xmls = []
 
-        if parallel:
-            # OR logic: parallel branches stacked vertically
-            # Each branch is a list of series contacts
-            # All branches start at x=16, offset y by branch index
-            branch_start_x = 16
-            max_width      = max(len(b) for b in parallel)
-            coil_x         = branch_start_x + max_width * 20
+        for si, (stage, s_ids, s_execs) in enumerate(
+            zip(stages, stage_ids, stage_execs)
+        ):
+            for j, (contact, c_id, c_exec) in enumerate(
+                zip(stage, s_ids, s_execs)
+            ):
+                c_x       = stage_x[si]
+                c_y       = contact_y(si, j)
+                neg_attr  = ' negated="true"' if contact.negated else ""
 
-            first_ids_per_branch = []
-            last_ids_per_branch  = []
-
-            for bi, branch in enumerate(parallel):
-                branch_y      = elements_y + bi * 6
-                prev_id_local = None
-                branch_ids    = []
-
-                for ci, contact in enumerate(branch):
-                    c_id   = next_id()
-                    c_exec = next_exec()
-                    c_x    = branch_start_x + ci * 20
-                    c_negated = ' negated="true"' if contact.negated else ""
-
-                    if prev_id_local is None:
-                        # Will connect to LPR — placeholder ref
-                        conn_in = (
-                            f'<connectionPointIn><relPosition x="0" y="2"/>'
-                            f'<connection refLocalId="__LPR__" formalParameter="{ci + 1}">'
-                            f'<position x="{c_x}" y="{branch_y + 2}"/>'
-                            f'<position x="{lpr_x + 3}" y="{branch_y + 2}"/>'
-                            f'{_connection_info()}</connection></connectionPointIn>'
-                        )
-                    else:
-                        conn_in = (
-                            f'<connectionPointIn><relPosition x="0" y="2"/>'
-                            f'<connection refLocalId="{prev_id_local}">'
-                            f'<position x="{c_x}" y="{branch_y + 2}"/>'
-                            f'<position x="{c_x - 2}" y="{branch_y + 2}"/>'
-                            f'{_connection_info()}</connection></connectionPointIn>'
-                        )
-
-                    c_xml = (
-                        f'<contact localId="{c_id}" height="4" width="18"{c_negated} '
-                        f'executionOrderId="{c_exec}">'
-                        f'<position x="{c_x}" y="{branch_y}"/>'
-                        f'{conn_in}'
-                        f'<connectionPointOut><relPosition x="18" y="2"/></connectionPointOut>'
-                        f'<variable>{escape(contact.name)}</variable>'
-                        f'{_object_info(network_id)}</contact>'
-                    )
-                    contact_xmls.append(c_xml)
-                    branch_ids.append(c_id)
-                    contact_x_map[c_id] = c_x + 18
-                    prev_id_local = c_id
-
-                first_ids_per_branch.append(branch_ids[0] if branch_ids else None)
-                last_ids_per_branch.append(branch_ids[-1] if branch_ids else None)
-
-            # LPR: wire connectionPointOut to first branch only (others via formalParameter)
-            lpr_first_conn = first_ids_per_branch[0] if first_ids_per_branch else None
-            coil_ref_ids   = [i for i in last_ids_per_branch if i is not None]
-
-        else:
-            # AND logic: series chain
-            contact_x = 16
-            prev_id_local = None
-            last_id = None
-
-            for ci, contact in enumerate(series):
-                c_id   = next_id()
-                c_exec = next_exec()
-                c_x    = contact_x + ci * 20
-                c_negated = ' negated="true"' if contact.negated else ""
-
-                if prev_id_local is None:
+                if si == 0:
+                    # First stage: connect from LPR via formalParameter
                     conn_in = (
                         f'<connectionPointIn><relPosition x="0" y="2"/>'
-                        f'<connection refLocalId="__LPR__" formalParameter="1">'
-                        f'<position x="{c_x}" y="{elements_y + 2}"/>'
-                        f'<position x="{lpr_x + 3}" y="{elements_y + 2}"/>'
+                        f'<connection refLocalId="{lpr_id}" formalParameter="{j + 1}">'
+                        f'<position x="{c_x}" y="{c_y + 2}"/>'
+                        f'<position x="13" y="{c_y + 2}"/>'
                         f'{_connection_info()}</connection></connectionPointIn>'
                     )
                 else:
+                    # Later stages: merge from ALL contacts of the previous stage
+                    connections = ""
+                    for pi, prev_id in enumerate(stage_ids[si - 1]):
+                        prev_x = stage_x[si - 1] + 18
+                        prev_y = contact_y(si - 1, pi)
+                        connections += (
+                            f'<connection refLocalId="{prev_id}">'
+                            f'<position x="{c_x}" y="{c_y + 2}"/>'
+                            f'<position x="{prev_x}" y="{prev_y + 2}"/>'
+                            f'{_connection_info()}</connection>'
+                        )
                     conn_in = (
                         f'<connectionPointIn><relPosition x="0" y="2"/>'
-                        f'<connection refLocalId="{prev_id_local}">'
-                        f'<position x="{c_x}" y="{elements_y + 2}"/>'
-                        f'<position x="{c_x - 2}" y="{elements_y + 2}"/>'
-                        f'{_connection_info()}</connection></connectionPointIn>'
+                        f'{connections}</connectionPointIn>'
                     )
 
-                c_xml = (
-                    f'<contact localId="{c_id}" height="4" width="18"{c_negated} '
+                contact_xmls.append(
+                    f'<contact localId="{c_id}" height="4" width="18"{neg_attr} '
                     f'executionOrderId="{c_exec}">'
-                    f'<position x="{c_x}" y="{elements_y}"/>'
+                    f'<position x="{c_x}" y="{c_y}"/>'
                     f'{conn_in}'
                     f'<connectionPointOut><relPosition x="18" y="2"/></connectionPointOut>'
                     f'<variable>{escape(contact.name)}</variable>'
                     f'{_object_info(network_id)}</contact>'
                 )
-                contact_xmls.append(c_xml)
-                contact_ids.append(c_id)
-                contact_x_map[c_id] = c_x + 18
-                prev_id_local = c_id
-                last_id = c_id
-
-            coil_x         = 16 + len(series) * 20 if series else 36
-            lpr_first_conn = contact_ids[0] if contact_ids else None
-            coil_ref_ids   = [last_id] if last_id else []
-
-        # ── Left power rail (now we know first contact id) ────────────────────
-        lpr_conn_id  = lpr_first_conn if lpr_first_conn else "__COIL__"
-        lpr_xml = (
-            f'<leftPowerRail localId="{lpr_id}" height="12" width="3" '
-            f'executionOrderId="{lpr_exec}">'
-            f'<position x="{lpr_x}" y="{elements_y - 2}"/>'
-            f'<connectionPointOut formalParameter="1">'
-            f'<relPosition x="3" y="2"/>'
-            f'<addData><data name="linkInformation" handleUnknown="preserve">'
-            f'<linkInformation executionOrder="{lpr_exec + 1}" localId="{lpr_conn_id}"/>'
-            f'</data></addData></connectionPointOut>'
-            f'{_object_info(network_id)}</leftPowerRail>'
-        )
 
         # ── Coil ──────────────────────────────────────────────────────────────
-        coil_id   = next_id()
-        coil_exec = next_exec()
-        coil_y    = elements_y
-
+        coil_y       = elements_y
         storage_attr = ""
         if coil_type == "set":
             storage_attr = ' storage="set"'
         elif coil_type == "reset":
             storage_attr = ' storage="reset"'
 
-        # Build coil connectionPointIn — connect from all last contacts (OR merge)
+        # Connect from ALL contacts of the last stage
         coil_connections = ""
-        for ref_id in coil_ref_ids:
-            ref_x = contact_x_map.get(ref_id, coil_x)
+        last_si = len(stages) - 1
+        for pi, prev_id in enumerate(stage_ids[last_si]):
+            prev_x = stage_x[last_si] + 18
+            prev_y = contact_y(last_si, pi)
             coil_connections += (
-                f'<connection refLocalId="{ref_id}">'
+                f'<connection refLocalId="{prev_id}">'
                 f'<position x="{coil_x}" y="{coil_y + 2}"/>'
-                f'<position x="{ref_x}" y="{coil_y + 2}"/>'
+                f'<position x="{prev_x}" y="{prev_y + 2}"/>'
                 f'{_connection_info()}</connection>'
             )
 
@@ -328,17 +309,14 @@ def generate(ast: dict) -> str:
             f'<coil localId="{coil_id}" height="4" width="18"{storage_attr} '
             f'executionOrderId="{coil_exec}">'
             f'<position x="{coil_x}" y="{coil_y}"/>'
-            f'<connectionPointIn><relPosition x="0" y="2"/>{coil_connections}</connectionPointIn>'
+            f'<connectionPointIn><relPosition x="0" y="2"/>'
+            f'{coil_connections}</connectionPointIn>'
             f'<connectionPointOut><relPosition x="18" y="2"/></connectionPointOut>'
             f'<variable>{escape(output_name)}</variable>'
             f'{_object_info(network_id)}</coil>'
         )
 
         # ── Right power rail ──────────────────────────────────────────────────
-        rpr_id   = next_id()
-        rpr_exec = next_exec()
-        rpr_x    = coil_x + 20
-
         rpr_xml = (
             f'<rightPowerRail localId="{rpr_id}" height="12" width="3" '
             f'executionOrderId="{rpr_exec}">'
@@ -351,16 +329,14 @@ def generate(ast: dict) -> str:
             f'{_object_info(network_id)}</rightPowerRail>'
         )
 
-        # ── Patch __LPR__ placeholder ─────────────────────────────────────────
         rung_block = "\n".join(
             [label_xml, lpr_xml] + contact_xmls + [coil_xml, rpr_xml]
-        ).replace("__LPR__", str(lpr_id)).replace("__COIL__", str(coil_id))
-
+        )
         networks_xml.append(rung_block)
 
     body_content = "\n\n".join(networks_xml)
 
-    xml = (
+    return (
         '<?xml version="1.0" encoding="utf-8"?>\n'
         '<body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
         'xmlns:xsd="http://www.w3.org/2001/XMLSchema">\n'
@@ -378,5 +354,3 @@ def generate(ast: dict) -> str:
         '</addData>\n'
         '</body>'
     )
-
-    return xml
