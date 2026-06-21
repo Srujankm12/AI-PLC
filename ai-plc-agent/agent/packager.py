@@ -76,6 +76,31 @@ def _patch_core_xml(core_path: str, project_name: str) -> None:
     print("  Core.xml patched")
 
 
+def _strip_safety(dest_root: str) -> None:
+    """Remove Safety area references so restricted PLCnext Engineer can open the project."""
+    # 1. SubFileSystems.xml — remove the Safety entry
+    sub_path = os.path.join(dest_root, "_properties", "SubFileSystems.xml")
+    if os.path.exists(sub_path):
+        content = _read(sub_path)
+        content = re.sub(r'\s*<SubFileSystem[^/]*/>', '', content)
+        content = re.sub(r'\s*<SubFileSystem[^>]*>.*?</SubFileSystem>', '', content, flags=re.DOTALL)
+        _write(sub_path, content)
+
+    # 2. Extended.xml — remove Requirements block (Areas = Safety requirement)
+    ext_path = os.path.join(dest_root, "_properties", "Extended.xml")
+    if os.path.exists(ext_path):
+        content = _read(ext_path)
+        content = re.sub(r'\s*<Requirements>.*?</Requirements>', '', content, flags=re.DOTALL)
+        _write(ext_path, content)
+
+    # 3. Safety folder — remove entirely
+    safety_dir = os.path.join(dest_root, "Safety")
+    if os.path.exists(safety_dir):
+        shutil.rmtree(safety_dir)
+
+    print("  Safety area stripped")
+
+
 def _patch_proj_file(proj_path: str, project_name: str) -> None:
     if not os.path.exists(proj_path):
         print(f"  [warn] PROJECT.proj not found at {proj_path}, skipping")
@@ -83,31 +108,63 @@ def _patch_proj_file(proj_path: str, project_name: str) -> None:
 
     content = _read(proj_path)
 
-    pou_folder_entry = (
-        f'    <PouFolder Include="Logical Elements\\{project_name}.pou">\n'
-        f'      <Id>{_u()}</Id>\n'
-        f'      <DisplayName>{project_name}</DisplayName>\n'
-        f'      <ParentIndex>0</ParentIndex>\n'
-        f'    </PouFolder>\n'
+    # ── 1. Remove Safety area reference ──────────────────────────────────────
+    content = re.sub(r'\s*<Area[^/]*/>', '', content)
+    content = re.sub(r'\s*<Area[^>]*>.*?</Area>', '', content, flags=re.DOTALL)
+
+    pou = f'Logical Elements\\{project_name}.pou'
+
+    # ── 2. Folder entry (correct element type: <Folder> with FolderType) ─────
+    folder_entry = (
+        f'       <Folder Include="{pou}">\n'
+        f'          <Id>{_u()}</Id>\n'
+        f'          <FolderType>PouFolder</FolderType>\n'
+        f'          <ParentIndex>1</ParentIndex>\n'
+        f'       </Folder>\n'
     )
+    # Insert after the first existing PouFolder <Folder> entry
+    m = re.search(r'(<Folder[^>]*>\s*<Id>[^<]*</Id>\s*<FolderType>PouFolder</FolderType>.*?</Folder>)',
+                  content, re.DOTALL)
+    if m:
+        content = content[:m.end()] + '\n' + folder_entry + content[m.end():]
 
-    code_ws_entry = (
-        f'    <CodeWorksheet Include="Logical Elements\\{project_name}.pou\\Code.nold">\n'
-        f'      <Id>{_u()}</Id>\n'
-        f'      <Type>.nold</Type>\n'
-        f'      <Extension>.nold</Extension>\n'
-        f'      <ParentIndex>1</ParentIndex>\n'
-        f'    </CodeWorksheet>\n'
+    # ── 3. CodeWorksheet entry ────────────────────────────────────────────────
+    code_entry = (
+        f'       <CodeWorksheet Include="{pou}\\Code.nold">\n'
+        f'          <Id>{_u()}</Id>\n'
+        f'          <Type>.nold</Type>\n'
+        f'          <Extension>.nold</Extension>\n'
+        f'          <ParentIndex>1</ParentIndex>\n'
+        f'       </CodeWorksheet>\n'
     )
+    # Insert after the first CodeWorksheet entry
+    m = re.search(r'(<CodeWorksheet\s[^>]*>.*?</CodeWorksheet>)', content, re.DOTALL)
+    if m:
+        content = content[:m.end()] + '\n' + code_entry + content[m.end():]
 
-    # Insert PouFolder before first </ItemGroup>
-    if "<PouFolder" not in content:
-        content = content.replace("</ItemGroup>", pou_folder_entry + "</ItemGroup>", 1)
+    # ── 4. MetadataDocument entry ─────────────────────────────────────────────
+    meta_entry = (
+        f'       <MetadataDocument Include="{pou}\\Metadata.meta">\n'
+        f'          <Id>{_u()}</Id>\n'
+        f'          <ParentIndex>2</ParentIndex>\n'
+        f'       </MetadataDocument>\n'
+    )
+    m = re.search(r'(<MetadataDocument\s[^>]*>.*?</MetadataDocument>)', content, re.DOTALL)
+    if m:
+        content = content[:m.end()] + '\n' + meta_entry + content[m.end():]
 
-    # Insert CodeWorksheet before last </ItemGroup>
-    last_ig = content.rfind("</ItemGroup>")
-    if last_ig != -1:
-        content = content[:last_ig] + code_ws_entry + content[last_ig:]
+    # ── 5. VariableWorksheet entry ────────────────────────────────────────────
+    var_entry = (
+        f'       <VariableWorksheet Include="{pou}\\Variables.var">\n'
+        f'          <Id>{_u()}</Id>\n'
+        f'          <Type>.var</Type>\n'
+        f'          <Extension>.var</Extension>\n'
+        f'          <ParentIndex>0</ParentIndex>\n'
+        f'       </VariableWorksheet>\n'
+    )
+    m = re.search(r'(<VariableWorksheet\s[^>]*>.*?</VariableWorksheet>)', content, re.DOTALL)
+    if m:
+        content = content[:m.end()] + '\n' + var_entry + content[m.end():]
 
     _write(proj_path, content)
     print("  PROJECT.proj patched")
@@ -156,11 +213,14 @@ def build(ast: dict, var_content: str, ld_content: str) -> str:
     _write(os.path.join(pou_dir, "VersionHistory.usermeta"), _version_history_xml())
     print("  VersionHistory.usermeta written")
 
-    # ── 7. Patch Core.xml ────────────────────────────────────────────────────
+    # ── 7. Strip Safety area (restricted PLCnext can't open Safety projects) ──
+    _strip_safety(dest_root)
+
+    # ── 8. Patch Core.xml ────────────────────────────────────────────────────
     core_xml_path = os.path.join(dest_root, "_properties", "Core.xml")
     _patch_core_xml(core_xml_path, project_name)
 
-    # ── 8. Patch PROJECT.proj ─────────────────────────────────────────────────
+    # ── 9. Patch PROJECT.proj ─────────────────────────────────────────────────
     proj_path = os.path.join(dest_root, "PROJECT", "PROJECT.proj")
     _patch_proj_file(proj_path, project_name)
 
