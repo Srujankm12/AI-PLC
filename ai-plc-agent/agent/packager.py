@@ -108,10 +108,6 @@ def _patch_proj_file(proj_path: str, project_name: str) -> None:
 
     content = _read(proj_path)
 
-    # ── 1. Remove Safety area reference ──────────────────────────────────────
-    content = re.sub(r'\s*<Area[^/]*/>', '', content)
-    content = re.sub(r'\s*<Area[^>]*>.*?</Area>', '', content, flags=re.DOTALL)
-
     pou = f'Logical Elements\\{project_name}.pou'
 
     # ── 2. Folder entry (correct element type: <Folder> with FolderType) ─────
@@ -213,10 +209,7 @@ def build(ast: dict, var_content: str, ld_content: str) -> str:
     _write(os.path.join(pou_dir, "VersionHistory.usermeta"), _version_history_xml())
     print("  VersionHistory.usermeta written")
 
-    # ── 7. Strip Safety area (restricted PLCnext can't open Safety projects) ──
-    _strip_safety(dest_root)
-
-    # ── 8. Patch Core.xml ────────────────────────────────────────────────────
+    # ── 7. Patch Core.xml ────────────────────────────────────────────────────
     core_xml_path = os.path.join(dest_root, "_properties", "Core.xml")
     _patch_core_xml(core_xml_path, project_name)
 
@@ -224,7 +217,7 @@ def build(ast: dict, var_content: str, ld_content: str) -> str:
     proj_path = os.path.join(dest_root, "PROJECT", "PROJECT.proj")
     _patch_proj_file(proj_path, project_name)
 
-    # ── 9. ZIP as .pcwex ──────────────────────────────────────────────────────
+    # ── 10. ZIP as .pcwex (URL-encode spaces to match PLCnext Engineer format) ──
     os.makedirs(_GENERATED_DIR, exist_ok=True)
     pcwex_path = os.path.join(_GENERATED_DIR, f"{project_name}.pcwex")
 
@@ -235,8 +228,8 @@ def build(ast: dict, var_content: str, ld_content: str) -> str:
             for filename in filenames:
                 abs_file = os.path.join(dirpath, filename)
                 rel_file = os.path.relpath(abs_file, dest_root)
-                # Normalise to forward slashes inside the archive
-                arc_name = rel_file.replace(os.sep, "/")
+                # Normalise to forward slashes, URL-encode spaces to match PLCnext format
+                arc_name = rel_file.replace(os.sep, "/").replace(" ", "%20")
                 zf.write(abs_file, arc_name)
 
     print(f"  .pcwex archive created: {pcwex_path}")
