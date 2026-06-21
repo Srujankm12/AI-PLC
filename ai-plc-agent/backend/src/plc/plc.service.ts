@@ -1,5 +1,8 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import Anthropic from '@anthropic-ai/sdk';
+import { execSync } from 'child_process';
+import * as path from 'path';
+import * as fs from 'fs';
 
 const SYSTEM_PROMPT = `You are a PLCnext Engineer expert.
 Convert ANY natural language PLC description to a JSON AST.
@@ -86,12 +89,47 @@ export class PlcService {
       .replace(/\s*```$/, '')
       .trim();
 
+    let ast: object;
     try {
-      return JSON.parse(cleaned);
+      ast = JSON.parse(cleaned);
     } catch {
       throw new InternalServerErrorException(
         'Claude returned non-JSON output. Raw: ' + cleaned.slice(0, 200),
       );
     }
+
+    // ── Run Python agent to build .pcwex ─────────────────────────────────────
+    const builderPath = path.resolve(__dirname, '../../../../agent/builder.py');
+    const astJson = JSON.stringify(ast).replace(/'/g, "\\'");
+
+    let pcwexPath: string;
+    try {
+      const stdout = execSync(`python3 "${builderPath}" '${astJson}'`, {
+        encoding: 'utf-8',
+        timeout: 60_000,
+      });
+      console.log('[builder]', stdout.trim());
+
+      const successLine = stdout.split('\n').find(l => l.startsWith('SUCCESS:'));
+      if (!successLine) {
+        const errorLine = stdout.split('\n').find(l => l.startsWith('ERROR:'));
+        throw new Error(errorLine ?? 'builder.py produced no SUCCESS line');
+      }
+      pcwexPath = successLine.replace('SUCCESS:', '').trim();
+    } catch (err: any) {
+      throw new InternalServerErrorException(
+        `Python agent error: ${err?.message ?? 'unknown'}`,
+      );
+    }
+
+    if (!fs.existsSync(pcwexPath)) {
+      throw new InternalServerErrorException(`Generated file not found: ${pcwexPath}`);
+    }
+
+    return {
+      ast,
+      fileName: path.basename(pcwexPath),
+      pcwexPath,
+    };
   }
 }
