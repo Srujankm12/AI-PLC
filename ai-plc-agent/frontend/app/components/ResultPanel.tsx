@@ -27,8 +27,27 @@ export default function ResultPanel({ result, downloadUrl, fileName }: ResultPan
     try {
       const res = await fetch(downloadUrl);
       const blob = await res.blob();
-      // Use Blob URL so Chrome uses the `download` attribute for the filename
-      // instead of sniffing ZIP magic bytes and appending .zip
+
+      // Use File System Access API when available — shows a proper Save dialog
+      // that respects our .pcwex type instead of defaulting to "Compressed Folder"
+      if (typeof window !== 'undefined' && 'showSaveFilePicker' in window) {
+        try {
+          const fileHandle = await (window as any).showSaveFilePicker({
+            suggestedName: fileName,
+            types: [{ description: 'PLCnext Project', accept: { 'application/x-pcwex': ['.pcwex'] } }],
+          });
+          const writable = await fileHandle.createWritable();
+          await writable.write(blob);
+          await writable.close();
+          return;
+        } catch (e: any) {
+          if (e?.name === 'AbortError') return;
+          // fall through to Blob URL fallback
+        }
+      }
+
+      // Fallback: Blob URL — works without dialog when Chrome's
+      // "Ask where to save" is OFF (file saves directly to Downloads as .pcwex)
       const url = URL.createObjectURL(new Blob([blob], { type: 'application/x-pcwex' }));
       const a = document.createElement('a');
       a.href = url;
