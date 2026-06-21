@@ -1,0 +1,18 @@
+VAR
+    Index : INT {Id('375a7e6f-243e-4eab-8d63-60a5f0a33b76')};
+END_VAR
+
+VAR_IN_OUT
+    ContainerStates : ContainerStructArray {Id('7599fd30-4c68-4be3-8fa3-fddf43958171')};
+END_VAR
+
+VAR_INPUT
+    Intake : BOOL {Id('5113a56e-aa4a-42c8-88d9-4e00d1467494')};
+    Heater : BOOL {Id('609129ef-305a-4267-b5d7-0a63f40f8f11')};
+    Drain : BOOL {Id('aaf94139-7fca-4daf-8d19-607b0f7e8596')};
+    ContainerLevel : INT {Id('1b3f6cf6-e475-4585-88cc-9aa9b909ee07')};
+    ContainerTemperature : INT {Id('68a7dd63-ba02-4e5a-b589-6ed5e5134d1b')};
+    ContainerStatus : STRING {Id('d6045923-3cf9-4efe-b517-50a9e37ba64f')};
+    ContainerValue : STRING {Id('422a5387-55b1-4016-8ce5-89f747263588')};
+END_VAR
+

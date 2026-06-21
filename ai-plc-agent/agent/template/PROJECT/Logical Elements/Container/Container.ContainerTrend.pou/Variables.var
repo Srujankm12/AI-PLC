@@ -1,0 +1,21 @@
+{ CustomGroupDefinition('92dccb35-2c92-417b-81e8-d01748e15b14', '') }
+
+VAR
+    Index : INT { CustomGroupReference('92dccb35-2c92-417b-81e8-d01748e15b14') } {Id('b323de1d-2f2f-4a91-ab1c-f33bebb365db')};
+    NextIndex : INT { CustomGroupReference('92dccb35-2c92-417b-81e8-d01748e15b14') } {Id('47530f17-7bf0-409f-a157-75bcb5cbd052')};
+    Toggle : BOOL { CustomGroupReference('92dccb35-2c92-417b-81e8-d01748e15b14') } {Id('c508383c-88a9-44c4-b4bf-cc91f1864769')};
+END_VAR
+
+VAR_IN_OUT
+    ContainerTrends : LongTermContainerArray { CustomGroupReference('92dccb35-2c92-417b-81e8-d01748e15b14') } {Id('c46e3fe8-05f5-4d16-ae15-ac1d74f04b99')};
+END_VAR
+
+VAR_INPUT
+    ContainerLevel : INT { CustomGroupReference('92dccb35-2c92-417b-81e8-d01748e15b14') } {Id('12035e3d-04e0-451e-bfca-51a85df04c0d')};
+    ContainerTemperature : INT { CustomGroupReference('92dccb35-2c92-417b-81e8-d01748e15b14') } {Id('f72999e2-d4a2-4f32-a531-79f2b619ca44')};
+END_VAR
+
+VAR_EXTERNAL
+    PLC_SYS_TICK_CNT : DINT { CustomGroupReference('92dccb35-2c92-417b-81e8-d01748e15b14') } {Id('70da41e0-1dc4-4afa-8cd3-e0b0f69a5f8e')};
+END_VAR
+

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HmiPage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Robot" BorderWidth="0">
+  <References>
+    <Documents>
+      <Document Id="eb76db34-9509-4add-bcd5-5732bf80e374" NodeType="HmiPage" Name="Main" />
+    </Documents>
+  </References>
+  <Layers>
+    <Layer>
+      <Objects>
+        <HmiObject xsi:type="Button" Rotation="0" ID="Button1" IsTabSelectable="true" TabOrder="0" NextId="1" LineColor="#FF3E3D40" LineWidth="5" Text="Container" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" IsLatching="false" IsDefault="false" ImpulseTime="0" ImagePlacement="Left" ImageAreaWidthUnits="Percent" ImageAreaHeightUnits="Percent" Margin="0" ImageWhenDownId="00000000-0000-0000-0000-000000000000" ImageScaling="Fill">
+          <Origin>
+            <X>1743</X>
+            <Y>986</Y>
+          </Origin>
+          <Location>
+            <X>1743</X>
+            <Y>986</Y>
+          </Location>
+          <TransformCenter>
+            <X>0</X>
+            <Y>0</Y>
+          </TransformCenter>
+          <Action xsi:type="LoadPageAction" Gesture="Click" ID="A0" Page="eb76db34-9509-4add-bcd5-5732bf80e374" />
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Fill xsi:type="SolidFill" Color="#FFFFFFFF" />
+          <DashStyle>
+            <Offset>0</Offset>
+            <Dashes />
+          </DashStyle>
+          <Size>
+            <Width>120</Width>
+            <Height>40</Height>
+          </Size>
+          <FillWhenDown xsi:type="SolidFill" Color="#FF8ACCD1" />
+          <ImageArea>
+            <Width>50</Width>
+            <Height>50</Height>
+          </ImageArea>
+          <CornerRadii>
+            <Width>4</Width>
+            <Height>4</Height>
+          </CornerRadii>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SymbolInstance1" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>92</X>
+            <Y>143</Y>
+          </Origin>
+          <Location>
+            <X>439</X>
+            <Y>566</Y>
+          </Location>
+          <TransformCenter>
+            <X>-347</X>
+            <Y>-423</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1</Height>
+            <Width>1</Width>
+          </Scale>
+          <SymbolName>SymbolRobot</SymbolName>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="3ff3bb0f-3d9c-4408-9887-c75fa2f42b1a">
+              <SourceInstance>
+                <Name>Robot</Name>
+                <Suffix>.Robot1.RobotAxis</Suffix>
+              </SourceInstance>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+        <HmiObject xsi:type="SymbolInstance" Rotation="0" ID="SymbolInstance2" IsTabSelectable="false" TabOrder="0">
+          <Origin>
+            <X>993</X>
+            <Y>143</Y>
+          </Origin>
+          <Location>
+            <X>1340</X>
+            <Y>566</Y>
+          </Location>
+          <TransformCenter>
+            <X>-347</X>
+            <Y>-423</Y>
+          </TransformCenter>
+          <EnableSecurityScope>Always</EnableSecurityScope>
+          <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+          <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+          <VisibleSecurityScope>Always</VisibleSecurityScope>
+          <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+          <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+          <Scale>
+            <Height>1</Height>
+            <Width>1</Width>
+          </Scale>
+          <SymbolName>SymbolRobot</SymbolName>
+          <Parameters>
+            <Parameter xsi:type="ParameterBindingVariable" ParameterID="3ff3bb0f-3d9c-4408-9887-c75fa2f42b1a">
+              <SourceInstance>
+                <Name>Robot</Name>
+                <Suffix>.Robot2.RobotAxis</Suffix>
+              </SourceInstance>
+            </Parameter>
+          </Parameters>
+        </HmiObject>
+      </Objects>
+    </Layer>
+  </Layers>
+  <Size>
+    <Width>1920</Width>
+    <Height>1080</Height>
+  </Size>
+  <MarginColorString>#FF000000</MarginColorString>
+  <AvailableSecurityScope>Always</AvailableSecurityScope>
+  <AvailableSecurityScopeOperator>Equal</AvailableSecurityScopeOperator>
+  <AvailableSecurityScopeLevel>0</AvailableSecurityScopeLevel>
+  <Fill xsi:type="SolidFill" Color="#FFFFFFFF" />
+</HmiPage>

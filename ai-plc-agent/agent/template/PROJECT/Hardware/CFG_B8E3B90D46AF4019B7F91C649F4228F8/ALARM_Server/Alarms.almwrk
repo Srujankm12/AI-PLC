@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerializedAlarmWorksheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="6038be88-0cc1-420b-afad-fb89a5643b74" Name="Alarms.almwrk">
+   <Groups>
+      <Group Id="b0fce5f1-8a7b-49fd-ade4-caca93b0e701" Name="Default" />
+      <Group Id="145ccc00-500d-4b96-b428-55f2fdefdfdf" Name="Temp">
+         <Alarms>
+            <Alarm xsi:type="SerializedMinAlarm" Id="04bb64e6-bd0a-493f-a7d8-f9eab2da7948" Name="HU" DataSource="Arp.Plc.Eclr/TemperatureCurrent" SourceName="=EB1" Priority="UINT#100" Message="Temp low">
+               <LowLow AlarmValue="Arp.Plc.Eclr/TemperatureMinimum" />
+            </Alarm>
+            <Alarm xsi:type="SerializedMaxAlarm" Id="2ea3bd52-83bc-4e86-9d70-a70aa0e370f7" Name="HO" DataSource="Arp.Plc.Eclr/TemperatureCurrent" SourceName="=EB1" Priority="UINT#100" Message="Temp high">
+               <HighHigh AlarmValue="Arp.Plc.Eclr/TemperatureMaximum" />
+            </Alarm>
+         </Alarms>
+      </Group>
+      <Group Id="06b60614-b068-460e-9ab8-9178cc34d9e4" Name="Level">
+         <Alarms>
+            <Alarm xsi:type="SerializedMinAlarm" Id="cd5c0fcd-4b5f-45e4-a486-77f7862cc33a" Name="LVL" DataSource="Arp.Plc.Eclr/LevelCurrent" SourceName="=C1" Priority="UINT#50" Message="Level LO">
+               <LowLow AlarmValue="Arp.Plc.Eclr/Record.LevelLo" />
+            </Alarm>
+            <Alarm xsi:type="SerializedMinAlarm" Id="ff72d41c-428c-42d6-b035-4d2457508b78" Name="LVLL" DataSource="Arp.Plc.Eclr/LevelCurrent" SourceName="=C1" Priority="UINT#100" Message="Level LOLO">
+               <LowLow AlarmValue="Arp.Plc.Eclr/Record.LevelLoLo" />
+            </Alarm>
+            <Alarm xsi:type="SerializedMaxAlarm" Id="d263d7da-eabf-43e7-854b-40345b6c09d4" Name="LVH" DataSource="Arp.Plc.Eclr/LevelCurrent" SourceName="=C1" Priority="UINT#50" Message="Level HI">
+               <HighHigh AlarmValue="Arp.Plc.Eclr/Record.LevelHi" />
+            </Alarm>
+            <Alarm xsi:type="SerializedMaxAlarm" Id="ea12efa3-e62a-4c0e-816e-4ca3bc8bb83c" Name="LVHH" DataSource="Arp.Plc.Eclr/LevelCurrent" SourceName="=C1" Priority="UINT#100" Message="Level HIHI">
+               <HighHigh AlarmValue="Arp.Plc.Eclr/Record.LevelHiHi" />
+            </Alarm>
+         </Alarms>
+      </Group>
+      <Group Id="cc3ab5b6-a4c4-4d1b-932e-b8987d12d15f" Name="Control">
+         <Alarms>
+            <Alarm xsi:type="SerializedBooleanAlarm" Id="3619a947-e8c7-4bf6-820f-1cdc3aac9752" Name="HeO" DataSource="Arp.Plc.Eclr/Heater" SourceName="=EB1" Priority="UINT#1" Message="Heater on">
+               <BooleanExpression AlarmValue="BOOL#1" />
+            </Alarm>
+            <Alarm xsi:type="SerializedBooleanAlarm" Id="dc38f90f-614f-4f99-abb3-a4a3e02b6ed2" Name="InO" DataSource="Arp.Plc.Eclr/Intake" SourceName="=K1" Priority="UINT#1" Message="Intake open">
+               <BooleanExpression AlarmValue="BOOL#1" />
+            </Alarm>
+            <Alarm xsi:type="SerializedBooleanAlarm" Id="03cb5a97-e1bf-4bd2-a87c-c376fc457ad6" Name="DrO" DataSource="Arp.Plc.Eclr/Drain" SourceName="=K2" Priority="UINT#1" Message="Drain open">
+               <BooleanExpression AlarmValue="BOOL#1" />
+            </Alarm>
+         </Alarms>
+      </Group>
+   </Groups>
+</SerializedAlarmWorksheet>

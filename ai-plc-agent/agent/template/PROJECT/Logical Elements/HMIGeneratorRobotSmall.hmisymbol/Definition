@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Symbol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="HMIGeneratorRobotSmall">
+  <Objects>
+    <HmiObject xsi:type="HmiImage" Rotation="0" ID="Image1" IsTabSelectable="false" TabOrder="0" NextId="4" LineColor="#FFCCD0D2" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" ImageId="b4eb08b1-5689-4484-9a46-9067b2af1866" ImageScaling="Fit">
+      <Origin>
+        <X>-41</X>
+        <Y>-81</Y>
+      </Origin>
+      <Location>
+        <X>-41</X>
+        <Y>-81</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <Dynamic xsi:type="AssignmentDynamic" TargetProperty="Page" TargetAlias="" TargetParentType="Ade.Hmi.OpenDialogAction" TargetId="A1">
+        <VariableInstance>
+          <Id>64c75123-16b2-43e3-aeb7-1fa8fe13b45d</Id>
+        </VariableInstance>
+      </Dynamic>
+      <Action xsi:type="OpenDialogAction" Gesture="Click" ID="A1" Page="64c75123-16b2-43e3-aeb7-1fa8fe13b45d" DimBackground="true" />
+      <Action xsi:type="WriteValueAction" Gesture="Click" ID="A3" SourceType="Variable">
+        <SourceVariableInstance>
+          <Name>InstancePath_Symbol</Name>
+        </SourceVariableInstance>
+        <DestinationVariableInstance>
+          <Name>InstancePath_App</Name>
+        </DestinationVariableInstance>
+      </Action>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>112.99999999999999</Width>
+        <Height>156.57203389830508</Height>
+      </Size>
+    </HmiObject>
+    <HmiObject xsi:type="HmiText" Rotation="0" ID="Text1" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="0" Text="Text" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FFFFFFFF" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" TextWrapping="WrapWithOverflow">
+      <Origin>
+        <X>-40.999999999999986</X>
+        <Y>81</Y>
+      </Origin>
+      <Location>
+        <X>-40.999999999999986</X>
+        <Y>81</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <Dynamic xsi:type="TextDynamic" TargetProperty="Text">
+        <VariableInstance>
+          <Name>Label</Name>
+        </VariableInstance>
+        <Expression xsi:type="SimpleSTExpression">
+          <ExpressionLine>Label</ExpressionLine>
+        </Expression>
+      </Dynamic>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#FF3E3D40" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>92.999999999999986</Width>
+        <Height>17.000000000000007</Height>
+      </Size>
+    </HmiObject>
+  </Objects>
+</Symbol>

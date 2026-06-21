@@ -1,0 +1,33 @@
+{ CustomGroupDefinition('0ced59a3-889a-437f-bb02-a127fde6c91c', 'Alarm Thesholds') }
+{ CustomGroupDefinition('90fb83ed-bd35-4846-8887-f05c9a366811', '') }
+
+VAR
+    XXThreshold : INT { CustomGroupReference('0ced59a3-889a-437f-bb02-a127fde6c91c') } {Id('9c4600f3-f4b8-40f0-a36c-cd8f3dd3cafb')};
+    XThreshold : INT { CustomGroupReference('0ced59a3-889a-437f-bb02-a127fde6c91c') } {Id('2c4aa3dd-dc76-4c50-9eb0-c8c065941a9b')};
+    LevelHiHi : INT { EHMI, CustomGroupReference('0ced59a3-889a-437f-bb02-a127fde6c91c') } {Id('254ab7d3-c995-49ad-938f-91f5a16360d6')};
+    LevelHi : INT { EHMI, CustomGroupReference('0ced59a3-889a-437f-bb02-a127fde6c91c') } {Id('3eefc175-5778-43bf-8874-07afe32034b7')};
+    LevelLo : INT { EHMI, CustomGroupReference('0ced59a3-889a-437f-bb02-a127fde6c91c') } {Id('e9f85d04-17d5-4ec8-980d-cf0b5fa1189a')};
+    LevelLoLo : INT { EHMI, CustomGroupReference('0ced59a3-889a-437f-bb02-a127fde6c91c') } {Id('f75edaa0-2a21-4c1f-a95f-42f2f18e407a')};
+    ContainerTrend_1 : Container.ContainerTrend { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('6e050db2-7aef-4825-868c-306de455fa4a')};
+END_VAR
+
+VAR_EXTERNAL
+    ContainerTrends : LongTermContainerArray { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('755c613b-1c10-4bed-9a78-cf5f25eebdf0')};
+    LevelCurrent : INT { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('5f9447b2-c246-4efc-9393-0ac57789c459')};
+    ContainerStates : ContainerStructArray { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('27d6281b-669e-4217-bf14-dfc028b213f3')};
+END_VAR
+
+VAR
+    ContainerStructDataCollector_1 : Container.ContainerStructDataCollector { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('f3f899e9-91d3-4f47-950c-d0a46824e142')};
+END_VAR
+
+VAR_EXTERNAL
+    Intake : BOOL { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('21c37379-041d-4c61-8ccb-db33f60bb7c3')};
+    Heater : BOOL { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('12bc2334-6adb-4f1c-8922-3ce9b839de03')};
+    Drain : BOOL { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('7bb38300-9738-412a-ade7-b07320407fb6')};
+    ContainerStatus : STRING { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('56bca41a-4e73-469a-b748-794b6ce80886')};
+    ContainerValues : STRING { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('c88b989f-d0a0-4631-95bd-98ca5f76abd7')};
+    LevelMaximum : INT { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('057f85ce-ea30-431d-9edb-836b63a00bf8')};
+    LevelMinimum : INT { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('1286bf41-fae1-45da-b3ca-40c6e73c9913')};
+    TemperatureCurrent : INT { CustomGroupReference('90fb83ed-bd35-4846-8887-f05c9a366811') } {Id('9c04429a-b93c-4de0-8f66-b19b12e8a571')};
+END_VAR

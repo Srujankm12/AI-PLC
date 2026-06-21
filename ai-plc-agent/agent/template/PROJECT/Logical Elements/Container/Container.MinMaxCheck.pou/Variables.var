@@ -1,0 +1,8 @@
+VAR_INPUT
+    MinVal : INT {Id('84ad7f17-dc29-40fe-a4e5-aee5ecdbbae9')};
+END_VAR
+
+VAR_IN_OUT
+    MaxVal : INT {Id('0b6fcdc5-cc63-4531-80ed-506cfc674c73')};
+END_VAR
+

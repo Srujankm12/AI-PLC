@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AdditionalProperties>
+    <Property Key="Application" Value="PLCnext Engineer" />
+    <Property Key="SubType" Value="" />
+    <Property Key="ApplicationVersion" Value="9.1.34.0" />
+    <Property Key="ProductVersion" Value="2026.3" />
+</AdditionalProperties>

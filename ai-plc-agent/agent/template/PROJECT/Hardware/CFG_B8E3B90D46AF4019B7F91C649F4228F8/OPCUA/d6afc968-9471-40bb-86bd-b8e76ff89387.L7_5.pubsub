@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PubSubConfiguration xmlns="http://phoenixcontact.com/OpcUA/PLCnext/GlobalDataSpace/">
+  <connection name="Connection1" enabled="true" publisherId="1" networkInterface="192.168.0.2" url="opc.udp://239.0.1.1:4840">
+    <readerGroup name="ReaderGroup1" enabled="true" />
+  </connection>
+  <publishedDataSet name="DataSet1" guid="debe3c63-ef62-4a1a-a80a-d96cd7e07dba">
+    <publishedData publishedVariable="Arp.Plc.Eclr/ApplicationStart" guid="33e5ac32-1c15-4bc2-b7bc-09f527242e02" />
+    <publishedData publishedVariable="Arp.Plc.Eclr/AXIO_DIAG_PARAM_2_REG_HI" guid="4558be4d-0f82-4f3c-8e0c-ab1d9e0e3dbf" />
+  </publishedDataSet>
+</PubSubConfiguration>

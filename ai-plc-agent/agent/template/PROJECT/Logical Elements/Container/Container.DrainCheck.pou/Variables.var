@@ -1,0 +1,15 @@
+VAR_INPUT
+    Intake : BOOL {Id('a7c4f458-0818-4890-a8c6-bb76984c0ef4')};
+    Heating : BOOL {Id('190383e0-d313-4840-953a-1693c70c3e09')};
+END_VAR
+
+VAR_OUTPUT
+    Drain : BOOL {Id('4055b54f-decc-4303-982a-2abd952546e8')};
+END_VAR
+
+VAR
+    SetDrain : BOOL {Id('afc3d906-a0c6-4268-9fe3-e263b804c3e6')};
+    ResetDrain : BOOL {Id('ef087a47-4c9a-408f-8fce-3e5d838d3d2a')};
+    RSDrain : RS {Id('e2f1c3b6-e07c-488f-85c4-fe2e19ad0db6')};
+END_VAR
+

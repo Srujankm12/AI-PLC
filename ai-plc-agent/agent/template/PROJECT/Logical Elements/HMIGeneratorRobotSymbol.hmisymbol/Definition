@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Symbol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="HMIGeneratorRobotSymbol" ResizeMethod="Scaling">
+  <Objects>
+    <HmiObject xsi:type="Line" Rotation="0" ID="Shape7" IsTabSelectable="false" TabOrder="0" LineColor="#00FFFFFF" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>327</X>
+        <Y>244.5</Y>
+      </Origin>
+      <Location>
+        <X>327</X>
+        <Y>244.5</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>100</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="13" ID="Shape8" IsTabSelectable="false" TabOrder="0" LineColor="#FF3E3D40" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>87</X>
+        <Y>184</Y>
+      </Origin>
+      <Location>
+        <X>87</X>
+        <Y>184</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>110.84084364168635</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="HmiImage" Rotation="0" ID="Image1" IsTabSelectable="false" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="1" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" ImageId="b4eb08b1-5689-4484-9a46-9067b2af1866" ImageScaling="Fit">
+      <Origin>
+        <X>188</X>
+        <Y>86</Y>
+      </Origin>
+      <Location>
+        <X>188</X>
+        <Y>86</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>236</Width>
+        <Height>327</Height>
+      </Size>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="44" ID="Shape9" IsTabSelectable="false" TabOrder="0" LineColor="#FF3E3D40" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>174</X>
+        <Y>67</Y>
+      </Origin>
+      <Location>
+        <X>174</X>
+        <Y>67</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>97.88984469454934</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="-52" ID="Shape10" IsTabSelectable="false" TabOrder="0" LineColor="#FF3E3D40" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>322</X>
+        <Y>136.27994163219307</Y>
+      </Origin>
+      <Location>
+        <X>322</X>
+        <Y>136.27994163219307</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>131.06412718288578</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Button" Rotation="0" ID="Button1" IsTabSelectable="true" TabOrder="0" NextId="1" LineColor="#FFCCD0D2" LineWidth="1" Text="Close" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Center" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" IsLatching="false" IsDefault="false" ImpulseTime="0" ImagePlacement="Left" ImageAreaWidthUnits="Percent" ImageAreaHeightUnits="Percent" Margin="0" ImageWhenDownId="00000000-0000-0000-0000-000000000000" ImageScaling="Fill">
+      <Origin>
+        <X>191</X>
+        <Y>417</Y>
+      </Origin>
+      <Location>
+        <X>191</X>
+        <Y>417</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <Action xsi:type="CloseDialogAction" Gesture="Click" ID="A0" SourceType="Constant" />
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#FFECEDED" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>192</Width>
+        <Height>32.99999999999999</Height>
+      </Size>
+      <FillWhenDown xsi:type="SolidFill" Color="#FF8ACCD1" />
+      <ImageArea>
+        <Width>50</Width>
+        <Height>50</Height>
+      </ImageArea>
+      <CornerRadii>
+        <Width>0</Width>
+        <Height>0</Height>
+      </CornerRadii>
+    </HmiObject>
+    <HmiObject xsi:type="TextInput" Rotation="0" ID="TextInput1" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="1" Text="Texteingabe" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square">
+      <Origin>
+        <X>11</X>
+        <Y>159</Y>
+      </Origin>
+      <Location>
+        <X>11</X>
+        <Y>159</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+        <VariableInstance>
+          <Name>RobotAxis</Name>
+          <Suffix>.RX</Suffix>
+        </VariableInstance>
+        <Expression xsi:type="SimpleSTExpression">
+          <ExpressionLine>RobotAxis.RX</ExpressionLine>
+        </Expression>
+      </Dynamic>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#FFCCD0D2" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>130</Width>
+        <Height>23</Height>
+      </Size>
+      <PasswordInputType>false</PasswordInputType>
+    </HmiObject>
+    <HmiObject xsi:type="TextInput" Rotation="0" ID="TextInput2" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="1" Text="Texteingabe" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square">
+      <Origin>
+        <X>109</X>
+        <Y>47</Y>
+      </Origin>
+      <Location>
+        <X>109</X>
+        <Y>47</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+        <VariableInstance>
+          <Name>RobotAxis</Name>
+          <Suffix>.RY</Suffix>
+        </VariableInstance>
+        <Expression xsi:type="SimpleSTExpression">
+          <ExpressionLine>RobotAxis.RY</ExpressionLine>
+        </Expression>
+      </Dynamic>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#FFCCD0D2" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>130</Width>
+        <Height>23</Height>
+      </Size>
+      <PasswordInputType>false</PasswordInputType>
+    </HmiObject>
+    <HmiObject xsi:type="TextInput" Rotation="0" ID="TextInput3" IsTabSelectable="true" TabOrder="0" LineColor="#FFCCD0D2" LineWidth="1" Text="Texteingabe" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square">
+      <Origin>
+        <X>339</X>
+        <Y>10</Y>
+      </Origin>
+      <Location>
+        <X>339</X>
+        <Y>10</Y>
+      </Location>
+      <TransformCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <Dynamic xsi:type="TextDynamic" Format="fixed0" TargetProperty="Text">
+        <VariableInstance>
+          <Name>RobotAxis</Name>
+          <Suffix>.RZ</Suffix>
+        </VariableInstance>
+        <Expression xsi:type="SimpleSTExpression">
+          <ExpressionLine>RobotAxis.RZ</ExpressionLine>
+        </Expression>
+      </Dynamic>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#FFCCD0D2" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <Size>
+        <Width>130</Width>
+        <Height>23</Height>
+      </Size>
+      <PasswordInputType>false</PasswordInputType>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="0" ID="Shape1" IsTabSelectable="false" TabOrder="0" LineColor="#FF3E3D40" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>140.00000000000045</X>
+        <Y>183.00000000000009</Y>
+      </Origin>
+      <Location>
+        <X>11</X>
+        <Y>183.00000000000009</Y>
+      </Location>
+      <TransformCenter>
+        <X>129.00000000000045</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>129.00000000000045</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="0" ID="Shape2" IsTabSelectable="false" TabOrder="0" LineColor="#FF96D20D" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>140.00000000000045</X>
+        <Y>181</Y>
+      </Origin>
+      <Location>
+        <X>11</X>
+        <Y>181</Y>
+      </Location>
+      <TransformCenter>
+        <X>129.00000000000045</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>129.00000000000045</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="0" ID="Shape3" IsTabSelectable="false" TabOrder="0" LineColor="#FF3E3D40" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>238.00000000000045</X>
+        <Y>70</Y>
+      </Origin>
+      <Location>
+        <X>109</X>
+        <Y>70</Y>
+      </Location>
+      <TransformCenter>
+        <X>129.00000000000045</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>129.00000000000045</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="0" ID="Shape4" IsTabSelectable="false" TabOrder="0" LineColor="#FF96D20D" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>238.00000000000045</X>
+        <Y>68</Y>
+      </Origin>
+      <Location>
+        <X>109</X>
+        <Y>68</Y>
+      </Location>
+      <TransformCenter>
+        <X>129.00000000000045</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>129.00000000000045</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="0" ID="Shape5" IsTabSelectable="false" TabOrder="0" LineColor="#FF3E3D40" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>468.00000000000045</X>
+        <Y>34.000000000000085</Y>
+      </Origin>
+      <Location>
+        <X>339</X>
+        <Y>34.000000000000085</Y>
+      </Location>
+      <TransformCenter>
+        <X>129.00000000000045</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>129.00000000000045</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+    <HmiObject xsi:type="Line" Rotation="0" ID="Shape6" IsTabSelectable="false" TabOrder="0" LineColor="#FF96D20D" LineWidth="2" FontFamily="Arial" FontSize="18" FontStyle="normal" FontWeight="400" FontColor="#FF3E3D40" IsTextWrapping="false" TextDirection="LeftToRight" HorizontalTextAlignment="Left" GuiStyle="Flat" TextMarginTop="0" TextMarginBottom="0" TextMarginLeft="0" TextMarginRight="0" EndCapType="Square" StartLineEndType="None" EndLineEndType="None" StartLineEndSize="Medium" EndLineEndSize="Medium" PathType="PolylinePath">
+      <Origin>
+        <X>468.00000000000045</X>
+        <Y>32</Y>
+      </Origin>
+      <Location>
+        <X>339</X>
+        <Y>32</Y>
+      </Location>
+      <TransformCenter>
+        <X>129.00000000000045</X>
+        <Y>0</Y>
+      </TransformCenter>
+      <EnableSecurityScope>Always</EnableSecurityScope>
+      <EnableSecurityScopeOperator>Equal</EnableSecurityScopeOperator>
+      <EnableSecurityScopeLevel>0</EnableSecurityScopeLevel>
+      <VisibleSecurityScope>Always</VisibleSecurityScope>
+      <VisibleSecurityScopeOperator>Equal</VisibleSecurityScopeOperator>
+      <VisibleSecurityScopeLevel>0</VisibleSecurityScopeLevel>
+      <Fill xsi:type="SolidFill" Color="#00FFFFFF" />
+      <DashStyle>
+        <Offset>0</Offset>
+        <Dashes />
+      </DashStyle>
+      <SubPaths IsClosed="false">
+        <Start>
+          <X>0</X>
+          <Y>0</Y>
+        </Start>
+        <Segments xsi:type="LinePathSegment">
+          <End>
+            <X>129.00000000000045</X>
+            <Y>0</Y>
+          </End>
+        </Segments>
+      </SubPaths>
+    </HmiObject>
+  </Objects>
+</Symbol>

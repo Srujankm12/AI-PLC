@@ -1,0 +1,68 @@
+{ CustomGroupDefinition('69c8411a-56e7-4b86-8f72-aab2f5b8a927', 'Temperature') }
+{ CustomGroupDefinition('1518f92d-f225-45cf-aaee-81c56590b056', 'Level') }
+{ CustomGroupDefinition('00000000-0000-0000-0000-000000000000', '') }
+
+VAR_EXTERNAL
+    TemperatureMinimum : INT { CustomGroupReference('69c8411a-56e7-4b86-8f72-aab2f5b8a927') } {Id('63e4e4c6-abb7-4106-baa6-d343bd10b473')};
+    TemperatureMaximum : INT { CustomGroupReference('69c8411a-56e7-4b86-8f72-aab2f5b8a927') } {Id('38537a24-02d3-4940-a3be-81f735803dfb')};
+END_VAR
+
+VAR
+    TLCTemperature : General.TLC { CustomGroupReference('69c8411a-56e7-4b86-8f72-aab2f5b8a927') } {Id('9513d31f-722b-4a6b-a8af-854c17e48a59')};
+END_VAR
+
+VAR_EXTERNAL
+    LevelMinimum : INT { CustomGroupReference('1518f92d-f225-45cf-aaee-81c56590b056') } {Id('b5055380-8bd9-415d-9809-6fda23e9f75f')};
+    LevelCurrent : INT { CustomGroupReference('1518f92d-f225-45cf-aaee-81c56590b056') } {Id('863521a0-a9d7-4dcd-a2ba-26dd4dc16dac')};
+    LevelMaximum : INT { CustomGroupReference('1518f92d-f225-45cf-aaee-81c56590b056') } {Id('a7e2449d-e031-4e20-ae16-d4c086a12761')};
+END_VAR
+
+VAR
+    TLCLevel : General.TLC { CustomGroupReference('1518f92d-f225-45cf-aaee-81c56590b056') } {Id('c7522383-2677-46b2-9754-a0ccbee16c09')};
+    DrainCheck_1 : DrainCheck {Id('83772f3f-108c-4f0d-9d27-5806c313ad18')};
+END_VAR
+
+VAR_EXTERNAL
+    Heater : BOOL {Id('251f043b-5d94-4f0d-b3e6-ce317fc1acdc')};
+    Drain : BOOL {Id('ab3691b8-05da-44ab-80ff-7a7343300bd5')};
+    Intake : BOOL {Id('1c2f993e-ae7e-41df-bade-c1a2aa88e462')};
+    ContainerStatus : STRING {Id('acb5950a-9e8e-48d1-b095-764cf0f6b153')};
+END_VAR
+
+VAR
+    ContainerTextGeneration_1 : ContainerTextGeneration {Id('1a44d342-21d0-4cbe-a080-9f9b96c8d5dd')};
+END_VAR
+
+VAR_EXTERNAL
+    ContainerValues : STRING {Id('300e370c-ee01-43a1-9373-0afe36f9fea0')};
+    ContainerStates : ContainerStructArray {Id('ddfd4712-2e2c-40c6-889e-413622f535d1')};
+END_VAR
+
+VAR
+    ContainerLevelMonitor_1 : ContainerLevelMonitor {Id('cfdb96df-f506-4ee0-b8b5-7693095ed925')};
+END_VAR
+
+VAR_EXTERNAL
+    ContainerLevelMonitoring : ContainerMonitoring {Id('640e3566-f86e-45ca-ac9b-9a65f74d96dc')};
+    ContainerStart : BOOL {Id('60c3c405-0fa0-4900-b4b3-a77d7105158f')};
+END_VAR
+
+VAR
+    TLC_2 : General.TLC {Id('a2d1d867-b860-4cbc-973a-5fa15aac638e')};
+    TLC_1 : General.TLC {Id('10303e98-17ae-4770-af44-bd131c4888b9')};
+    CTUD_2 : CTUD {Id('206e588e-9943-439a-b7b5-04d9176ee130')};
+    CTUD_1 : CTUD {Id('ae948592-5b90-4540-bb64-7406a21e9c47')};
+    ResetCounter : BOOL {Id('84e7f772-ad58-4dd4-a0d8-5a45d5c1f08e')};
+    LoadCounter : BOOL {Id('25ff5eb4-f654-4b48-af80-a8f0b06ba460')};
+    CountTemperatureUp : BOOL {Id('70dbdc5b-1c9a-44b3-bf48-d3faca90ce4b')};
+    CountTemperatureDown : BOOL {Id('69c7129d-bc87-4bf9-aec0-59cb288d56c8')};
+    ContainerEnvironment_1 : ContainerEnvironment {Id('00b08bfa-92d1-4deb-892d-57a841f10a53')};
+    CountLevelUp : BOOL {Id('596b1426-eebf-48ca-a7e7-6b1379f65c5a')};
+    CountLevelDown : BOOL {Id('48ad5bde-4937-4533-b324-aa24e67aa1cd')};
+    TempCheck : MinMaxCheck {Id('00f1de8e-1129-4e0f-bdcb-0f1f49187cb3')};
+    LevelCheck : MinMaxCheck {Id('af433036-1e86-457e-926b-c3e82e8323f2')};
+END_VAR
+
+VAR_EXTERNAL
+    TemperatureCurrent : INT {Id('4fddac65-464e-4c1e-bb73-f4cb81b886fc')};
+END_VAR

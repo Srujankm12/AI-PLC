@@ -1,0 +1,43 @@
+{ Type('AXCF1152') }
+RESOURCE IEC 61131-3
+{ DeviceProfileWorksheet('DeviceProfile', Id := '4d0dfaca-0c98-49aa-8a8f-e967c8a0876c') }
+{ DeviceProfile(
+    Name := 'RES_774D635C07E24281A6277DAD1A98921E',
+    Parent := ( Name := 'AXCF1152', Version := '2025.0.0'), 
+    UpdateType := 'Manual',
+    CommunicationMetadata := 'UniqueId=TcpIp_Simulation',
+    CommunicationParameters := 'DLL socomm.dll -ip0.0.0.0 -p41100 -to2000',
+    CommunicationType := 'TcpIp',
+    DownloadFiles := 
+    [
+    ],
+    FilesIni := 
+    [
+    ],
+    SimulationMode :=
+    (
+        DownloadFiles := 
+        [
+        ],
+        FilesIni := 
+        [
+        ]
+    )
+)}
+
+
+TASK Cyclic50 (INTERVAL := T#50ms, PRIORITY := 1) { Watchdog(T#100ms), Id('8ed7e1a7-9859-444a-9911-7f4c022a2a1e') };
+
+TASK Cyclic100 (INTERVAL := T#100ms, PRIORITY := 2) { Watchdog(T#500ms), Id('791acbf1-5533-4c5e-9d66-4b84ab1ebfa4') };
+
+TASK Recording (INTERVAL := T#1000ms, PRIORITY := 3) { Watchdog(T#2000ms), Id('4634ec97-7d0c-41a5-b92f-f43e3276c911') };
+
+PROGRAM Container WITH Cyclic50 : Container.Container { Id('4882bd39-a915-41ef-91f3-2e3335a431c0') };
+
+PROGRAM Robot WITH Cyclic100 : Robot.Robot { Id('83f1bb08-1bd3-42fc-a1ca-355ef30783f4') };
+
+PROGRAM LadderSample WITH Cyclic100 : LadderSample { Id('3e963314-8e8b-49ac-9049-39a726773e63') };
+
+PROGRAM Record WITH Recording : Container.Recording { Id('06622d89-3365-4e71-b787-065a84c02d69') };
+
+END_RESOURCE

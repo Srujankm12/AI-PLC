@@ -1,0 +1,31 @@
+{ CustomGroupDefinition('1a53f3e8-6807-4896-8aaf-0c6b514ebda2', 'Externals') }
+{ CustomGroupDefinition('aab551ae-33b3-4d8c-bafb-06964e851647', 'IO') }
+{ CustomGroupDefinition('6c011ccf-9ada-4b96-b194-e2a20742ec09', 'internal') }
+{ CustomGroupDefinition('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24', '') }
+
+VAR_EXTERNAL
+    ApplicationStart : BOOL { CustomGroupReference('1a53f3e8-6807-4896-8aaf-0c6b514ebda2') } {Id('45b2df5d-3d1b-4564-bb6a-efe6252b0a98')};
+    EnvironmentOK : BOOL { CustomGroupReference('1a53f3e8-6807-4896-8aaf-0c6b514ebda2') } {Id('aa0fafe0-3cd2-4799-9c29-97cb89650315')};
+    PressureOK : BOOL { CustomGroupReference('1a53f3e8-6807-4896-8aaf-0c6b514ebda2') } {Id('b560885d-3bbf-4380-a9b8-433ed548fccb')};
+    PumpsStandby : BOOL { CustomGroupReference('1a53f3e8-6807-4896-8aaf-0c6b514ebda2') } {Id('7f2b0e5d-860c-416a-9b69-7681d06bb9c8')};
+    HeaterReady : BOOL { CustomGroupReference('1a53f3e8-6807-4896-8aaf-0c6b514ebda2') } {Id('c3ce5dc6-d3bf-4a60-b533-7402170217c0')};
+    SafetyConditions : BOOL { CustomGroupReference('1a53f3e8-6807-4896-8aaf-0c6b514ebda2') } {Id('1c548223-09f7-4171-ae90-8cab39e7184f')};
+    ApplicationReady : BOOL { CustomGroupReference('1a53f3e8-6807-4896-8aaf-0c6b514ebda2') } {Id('29ad7a46-a91c-4ae0-b8d3-4d9fb85b422a')};
+END_VAR
+
+VAR_INPUT
+    ContainerStart : BOOL { CustomGroupReference('aab551ae-33b3-4d8c-bafb-06964e851647') } {Id('a7c9376f-308c-4910-9def-ca6bf86edcd3')};
+END_VAR
+
+VAR_OUTPUT
+    ContainerPulse : BOOL { CustomGroupReference('aab551ae-33b3-4d8c-bafb-06964e851647') } {Id('fd616dfc-d0b4-4477-afb4-8c723b3ecd1a')};
+    ContainerFastPulse : BOOL { CustomGroupReference('aab551ae-33b3-4d8c-bafb-06964e851647') } {Id('9478038a-8a1a-497f-a3ac-76a3bb301899')};
+END_VAR
+
+VAR
+    ActionTime : TIME { CustomGroupReference('6c011ccf-9ada-4b96-b194-e2a20742ec09') } {Id('7fe1b9e8-6a2b-4c27-b3bd-4e774e302fb6')};
+    FastActionTime : TIME { CustomGroupReference('6c011ccf-9ada-4b96-b194-e2a20742ec09') } {Id('ceee05cf-ad5d-463f-bb95-8fc9dd13d467')};
+    ContainerPulseGeneration : TP { CustomGroupReference('6c011ccf-9ada-4b96-b194-e2a20742ec09') } {Id('aa4ab1df-442f-4205-819f-8b270af5a6f0')};
+    ContainerFastPulseGeneration : TP { CustomGroupReference('6c011ccf-9ada-4b96-b194-e2a20742ec09') } {Id('31902e97-6651-426d-9e35-a38acbf2e510')};
+END_VAR
+

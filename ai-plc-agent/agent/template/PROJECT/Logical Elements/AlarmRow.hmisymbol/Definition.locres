@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextResourceID>134</NextResourceID>
+  <Languages ID="0" Name="Default" />
+  <Resources ID="106" Name="Text4.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="110" Name="Text8.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+  <Resources ID="111" Name="Text9.Text">
+    <Values LanguageID="0" LocalValue="Text" />
+  </Resources>
+</ResourcesDocument>

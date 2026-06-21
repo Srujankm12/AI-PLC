@@ -1,0 +1,18 @@
+VAR_INPUT
+    Intake : BOOL {Id('fe9a44b5-1d09-4b5a-af68-ab5ad7bde51a')};
+    Heater : BOOL {Id('5d2b20ed-7c82-4bf3-8752-0e5fce10e842')};
+    Drain : BOOL {Id('3f31300d-ccea-4f2e-b449-d0a9cf876579')};
+    ContainerLevel : INT {Id('b02725bb-20e8-4d1a-b1b0-1b7fcefa56c4')};
+    ContainerTemperature : INT {Id('bd7ac706-0afc-431c-a08d-2fc77d941520')};
+END_VAR
+
+VAR_OUTPUT
+    ContainerStatus : STRING {Id('5650b2e3-dc2a-42f9-9e87-d9e7a520f6e6')};
+    ContainerValue : STRING {Id('ce903c22-8187-4ff5-8301-57f3dc3ea918')};
+END_VAR
+
+VAR
+    ContainerLevelText : STRING {Id('0cb55253-9457-4447-a707-e303319fa16a')};
+    ContainerTemperatureText : STRING {Id('76f12b2b-e783-4854-ba36-a7ae9a7a9330')};
+END_VAR
+

@@ -1,0 +1,21 @@
+{ CustomGroupDefinition('74db7c62-03ec-4e53-bf68-af6b8df8c241', '') }
+
+VAR_OUTPUT
+    RobotX : INT { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241'), EHMI } {Id('4c35c8fc-5c6d-4722-9185-75a855bb1fa1')};
+    RobotY : INT { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241'), EHMI } {Id('c20bd606-17fe-40c3-b10b-db79e98aea43')};
+    RobotZ : INT { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241'), EHMI } {Id('a60b9d7e-bf14-4cdb-82e6-bfb15fc4bca2')};
+END_VAR
+
+VAR_INPUT
+    RobotRange : INT { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241') } {Id('6c5d8644-9685-476d-afd0-93e3c474b726')};
+    AddArm : INT { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241') } {Id('de551e73-1f50-4846-adba-7911e1d50097')};
+END_VAR
+
+VAR
+    CycleCountX : REAL { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241') } {Id('f1032e92-98e2-45ee-8c68-395e3a870f6e')};
+    CycleCountY : REAL { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241') } {Id('0e950c64-226a-4e32-af12-be2e2ac87cfe')};
+    CycleCountZ : REAL { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241') } {Id('929e6545-d996-4a7e-8a3e-f761112c3c30')};
+    XYRange : REAL { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241') } {Id('f7bbc5aa-4aa6-4537-bf21-d7b9be1b2700')};
+    ZRange : REAL { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241') } {Id('0b57bab9-fd6f-4e82-9202-0d46b810549f')};
+    RobotAxis : RobotUDT { CustomGroupReference('74db7c62-03ec-4e53-bf68-af6b8df8c241'), EHMI } {Id('30c11141-3a13-41d1-83c7-ffc30399e26b')};
+END_VAR

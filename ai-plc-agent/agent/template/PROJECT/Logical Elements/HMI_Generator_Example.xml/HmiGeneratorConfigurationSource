@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+ <!--
+ ////////////////////////////////////////////////////////////////////////////
+ //         Example PLCnext Engineer HMI Generator configuration filename  //
+ //			Copyright 2021                                                 //
+ //			PHOENIX CONTACT GmbH & Co. KG                                  //
+ //                                                                        //
+ //			Notice: The HMI generator requires an AddIn license            //
+ ////////////////////////////////////////////////////////////////////////////
+ -->
+ 
+<hmigenerator>
+	<generation>
+	<!-- Create page "RobotOverview" -->
+		<page id="RobotOverview">
+			<symbol id="HMIGeneratorRobotSmall"> 		<!-- with symbol "HMIGeneratorRobotSmall" -->
+				<onfunctionblock id="RobotFB"> 			<!-- on trigger condition= FunctionBlock RobotFB instance found-->
+					<symbolstyle>AlignX</symbolstyle>	<!-- Symbol syte set "AlignX" is used -->		
+					<dataset>SetRobotSmall</dataset>	<!-- dataset "SetRobotSmall" is used -->
+				</onfunctionblock>
+			</symbol>
+		</page>
+	<!-- create page "RobotDetail -->		
+		<page id="RobotDetail">
+			<symbol id="HMIGeneratorRobotSymbol" unique="true"> 	<!-- create symbol only once and not for each FB instance -->
+				<onfunctionblock id="RobotFB">						<!--  on trigger condition= FunctionBlock RobotFB instance found-->
+					<symbolstyle>AlignY</symbolstyle>				<!-- Symbol syte set "AlignY" is used -->
+					<dataset>SetRobotDetails</dataset>				<!-- dataset "SetRobotDetails" is used -->
+				</onfunctionblock>
+			</symbol>
+		<pagestyle>DialogPage</pagestyle>							<!-- Pagestyle "DialogPage" is used -->
+		</page>
+	</generation>
+	
+	<!-- section for symbolstyles "AlignX" and "AlignY" definition -->	
+	<symbolstyles>
+		<symbolstyle id="AlignX">
+			<location x="140" y="300" align="x" margin="100"/>		<!-- absolute position of placed symbol on page -->
+		</symbolstyle>
+
+		<symbolstyle id="AlignY">
+			<location x="10" y="10" align="x" margin="10"/> 		<!-- absolute position of placed symbol on page -->
+		</symbolstyle>
+	</symbolstyles>
+	
+	<!-- pagestype definition -->
+	<pagestyles>
+		<pagestyle id="DialogPage">
+			<width>480</width>
+			<height>480</height>
+		</pagestyle>
+	</pagestyles>
+	
+	<!-- Dataset definition -->
+	<datasets>
+		<dataset id="SetRobotSmall"> 								<!-- dataset RobotSmall -->
+			<data key="Label" type="constant" value="@Pou.Name@"/> 	<!-- The symbol parameter "Label" is connected to the placeholder "@Pou.Name@" which represents the name of the POU instance  -->
+			<data key="openPage" type="page" value="RobotDetail"/> 	<!-- The symbol parameter "openPage" is connetced to the value "RobotDetail"-->
+			<data key="InstancePath_App" type="variable" value="InstancePath_Application"/> <!-- The symbol parameter "InstancePath_App" is connected to the ApplicationTag -->
+			<data key="InstancePath_Symbol" type="constant" value="@Pou.InstancePath@"/> <!-- The symbol parameter InstancePath_Symbol" is connected with the placeholder "@Pou.InstancePath@ which represents the full instance path of the POU  -->
+		</dataset>
+
+		<dataset id="SetRobotDetails"> 								<!-- Dataset for RobotDetails-->
+		<!-- The symbol parameter "RobotAxis" is connected to the path which is represented by "InstancePath_Application and concated with ".RobotAxis" to ensure the correct data connection
+		This is the main section to use one simple symbol for many different function block instances and ensures by the placeholder the correct connection to the variable data of each FB instance-->
+			<data key="RobotAxis" type="variablepath" value="GlobalTag(InstancePath_Application + '.RobotAxis') "/> 
+			<data key="Label" type="constant" value="Label text"/> <!-- The symbol parameter "Label" is connected to a constant value "Label text"-->
+		</dataset>
+	</datasets>
+	
+<!-- General settings for the HMI application-->	
+	<settings>
+		<tagset>hmitag_Application</tagset> 	<!-- Trigger for the creation of application tags-->
+		<startpage>RobotOverview</startpage> 	<!-- Trigger for setting a startpage-->
+	</settings>
+	
+<!-- Application tag definition-->	
+	<tagsets>
+		<tagset id="hmitag_Application"> 
+			<tag key="InstancePath_Application" type="string" value="" comment="Placeholder detail page instance path"/> <!-- -->
+		</tagset>
+	</tagsets>
+	
+	</hmigenerator>
+	

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EsmConfiguration id="86fa568f-7944-4bbe-96f9-855bbc0810e6" version="2" importRevision="1">
+	<Esms>
+		<Esm id="df0a9784-f218-4f72-beef-19db60867c1f" name="ESM1" cpuAffinity="1" timerInterval="500000" taskSchedulerMode="" comment="" readonly="False" />
+	</Esms>
+	<Tasks>
+		<Task id="8ed7e1a7-9859-444a-9911-7f4c022a2a1e" name="Cyclic50" taskType="CyclicTask" priority="1" intervalTime="50000000" watchdogTime="100000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="df0a9784-f218-4f72-beef-19db60867c1f" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="4882bd39-a915-41ef-91f3-2e3335a431c0" name="Container" programType="Container.Container" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="791acbf1-5533-4c5e-9d66-4b84ab1ebfa4" name="Cyclic100" taskType="CyclicTask" priority="2" intervalTime="100000000" watchdogTime="500000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="df0a9784-f218-4f72-beef-19db60867c1f" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="83f1bb08-1bd3-42fc-a1ca-355ef30783f4" name="Robot" programType="Robot.Robot" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+				<ProgramInstance id="3e963314-8e8b-49ac-9049-39a726773e63" name="LadderSample" programType="LadderSample" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+				<ProgramInstance id="25443599-42a6-4448-ad97-92bb01c4fee7" name="AlarmProgram1" programType="AlarmProgram" componentId="da8aa40a-4653-4b72-b8f5-fd9dde9a1113" libraryName="Arp.Plc.Alarm" componentName="Arp.Services.AlarmServer" componentType="AlarmProgram" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="4634ec97-7d0c-41a5-b92f-f43e3276c911" name="Recording" taskType="CyclicTask" priority="3" intervalTime="1000000000" watchdogTime="2000000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="df0a9784-f218-4f72-beef-19db60867c1f" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="06622d89-3365-4e71-b787-065a84c02d69" name="Record" programType="Container.Recording" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+	</Tasks>
+</EsmConfiguration>

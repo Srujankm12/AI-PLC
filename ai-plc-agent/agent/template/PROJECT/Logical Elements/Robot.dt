@@ -1,0 +1,9 @@
+NAMESPACE Robot
+TYPE
+    RobotUDT : STRUCT
+        RX : INT;
+        RY : INT;
+        RZ : INT ;
+    END_STRUCT;
+END_TYPE
+END_NAMESPACE
