@@ -4,6 +4,6 @@ import { Controller, Get } from '@nestjs/common';
 export class AppController {
   @Get('health')
   health() {
-    return { status: 'ok', timestamp: new Date() };
+    return { status: 'ok', service: 'ai-plc-agent' };
   }
 }

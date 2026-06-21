@@ -1,139 +1,97 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import Anthropic from '@anthropic-ai/sdk';
-import { spawn } from 'child_process';
-import * as path from 'path';
 
-@Injectable()
-export class PlcService {
-  private anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY,
-  });
+const SYSTEM_PROMPT = `You are a PLCnext Engineer expert.
+Convert ANY natural language PLC description to a JSON AST.
 
-  async generateProject(prompt: string) {
-    try {
-      // Step 1: Call Claude API
-      console.log('Calling Claude API...');
-      const message = await this.anthropic.messages.create({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 1000,
-        system: `You are a PLCnext Engineer expert.
-Convert natural language PLC descriptions to JSON.
-Return ONLY valid JSON, no explanation, no markdown.
-Format:
+Rules:
+1. Return ONLY valid JSON — no explanation, no markdown, no code fences
+2. Handle ANY ladder logic type:
+   - Simple contacts and coils
+   - AND / OR / NOT logic
+   - Seal-in / latch circuits
+   - Multiple rungs
+   - Timer (TON / TOF) logic
+   - Counter (CTU / CTD) logic
+   - Set / Reset coils
+   - Safety / Emergency circuits
+3. Tag naming: use descriptive names extracted from the prompt
+4. If an address is not specified, auto-assign:
+     Inputs:   I0.0, I0.1, I0.2 … (%I*)
+     Outputs:  Q0.0, Q0.1, Q0.2 … (%Q*)
+     Internal: M0.0, M0.1, M0.2 … (%M*)
+5. projectName must be PascalCase and describe the logic
+6. For complex logic, generate multiple rungs
+7. expression field must use IEC 61131-3 syntax: AND, OR, NOT(), parentheses
+
+Return this exact JSON shape — nothing else:
 {
-  "projectName": "PascalCase name no spaces",
+  "projectName": "PascalCaseName",
   "tags": [
-    {"name": "Start", "type": "BOOL", 
-     "io": "INPUT", "address": "%I*"},
-    {"name": "Stop", "type": "BOOL", 
-     "io": "INPUT", "address": "%I*"},
-    {"name": "Motor", "type": "BOOL", 
-     "io": "OUTPUT", "address": "%Q*"}
+    {
+      "name": "TagName",
+      "type": "BOOL|INT|REAL|WORD|TON|CTU",
+      "io": "INPUT|OUTPUT|INTERNAL",
+      "address": "%I*|%Q*|%M*"
+    }
   ],
   "rungs": [
     {
       "id": 1,
-      "comment": "Motor seal-in circuit",
-      "expression": "Start OR (Motor AND NOT(Stop))"
+      "comment": "what this rung does",
+      "expression": "IEC 61131-3 expression",
+      "output": "output tag name",
+      "type": "coil|set|reset|ton|ctu"
     }
   ]
-}`,
+}`;
+
+@Injectable()
+export class PlcService {
+  private readonly client: Anthropic;
+
+  constructor() {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey || apiKey === 'your_anthropic_api_key_here') {
+      console.warn('WARNING: ANTHROPIC_API_KEY is not set in .env');
+    }
+    this.client = new Anthropic({ apiKey });
+  }
+
+  async generate(prompt: string): Promise<object> {
+    let raw: string;
+
+    try {
+      const message = await this.client.messages.create({
+        model: 'claude-opus-4-8',
+        max_tokens: 2048,
+        system: SYSTEM_PROMPT,
         messages: [{ role: 'user', content: prompt }],
       });
 
-      // Step 2: Extract JSON
-      const responseText =
-        message.content[0].type === 'text'
-          ? message.content[0].text
-          : '';
-
-      console.log('Claude response:', responseText);
-
-      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-      if (!jsonMatch) {
-        return {
-          success: false,
-          message: 'Claude did not return valid JSON',
-        };
+      const block = message.content[0];
+      if (block.type !== 'text') {
+        throw new Error('Unexpected response type from Claude API');
       }
-
-      const ast = JSON.parse(jsonMatch[0]);
-      console.log('AST:', JSON.stringify(ast, null, 2));
-
-      // Step 3: Call Python agent
-      const pythonPath = path.resolve(
-        __dirname,
-        process.env.PYTHON_AGENT_PATH || '../../../agent/builder.py',
+      raw = block.text.trim();
+    } catch (err: any) {
+      throw new InternalServerErrorException(
+        `Claude API error: ${err?.message ?? 'unknown error'}`,
       );
-
-      console.log('Calling Python agent:', pythonPath);
-      const result = await this.runPython(
-        pythonPath,
-        JSON.stringify(ast),
-      );
-
-      return result;
-
-    } catch (error) {
-      console.error('Error:', error);
-      return {
-        success: false,
-        message: `Error: ${error.message}`,
-      };
     }
-  }
 
-  private runPython(
-    scriptPath: string,
-    astJson: string,
-  ): Promise<any> {
-    return new Promise((resolve) => {
-      const python = spawn('python', [scriptPath, astJson]);
+    // Strip markdown code fences if Claude added them despite instructions
+    const cleaned = raw
+      .replace(/^```(?:json)?\s*/i, '')
+      .replace(/\s*```$/, '')
+      .trim();
 
-      let stdout = '';
-      let stderr = '';
-
-      python.stdout.on('data', (data) => {
-        stdout += data.toString();
-        console.log('Python stdout:', data.toString());
-      });
-
-      python.stderr.on('data', (data) => {
-        stderr += data.toString();
-        console.error('Python stderr:', data.toString());
-      });
-
-      python.on('close', (code) => {
-        console.log('Python exit code:', code);
-
-        if (stdout.includes('SUCCESS:')) {
-          const pcwexPath = stdout
-            .split('SUCCESS:')[1]
-            .trim();
-          resolve({
-            success: true,
-            message: 'PLCnext Engineer opened!',
-            pcwexPath,
-          });
-        } else {
-          const errorMsg = stdout.includes('ERROR:')
-            ? stdout.split('ERROR:')[1].trim()
-            : stderr || 'Python agent failed';
-          resolve({
-            success: false,
-            message: errorMsg,
-          });
-        }
-      });
-
-      // 60 second timeout
-      setTimeout(() => {
-        python.kill();
-        resolve({
-          success: false,
-          message: 'Timeout: Python agent took too long',
-        });
-      }, 60000);
-    });
+    try {
+      return JSON.parse(cleaned);
+    } catch {
+      throw new InternalServerErrorException(
+        'Claude returned non-JSON output. Raw: ' + cleaned.slice(0, 200),
+      );
+    }
   }
 }
