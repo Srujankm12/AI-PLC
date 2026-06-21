@@ -12,7 +12,7 @@ interface GenerateDto {
 }
 
 // Resolved once — agent/generated/ sits next to the backend folder
-const GENERATED_DIR = path.resolve(__dirname, '../../../../agent/generated');
+const GENERATED_DIR = path.resolve(__dirname, '../../../agent/generated');
 
 @Controller('plc')
 export class PlcController {
