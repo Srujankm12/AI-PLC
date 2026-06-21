@@ -42,6 +42,11 @@ export class PlcController {
       throw new HttpException('File not found', HttpStatus.NOT_FOUND);
     }
 
-    res.download(filePath, file);
+    const stat = fs.statSync(filePath);
+    // Use a vendor MIME type Chrome doesn't map to ZIP — prevents .zip rename
+    res.setHeader('Content-Type', 'application/x-pcwex');
+    res.setHeader('Content-Disposition', `attachment; filename="${file}"`);
+    res.setHeader('Content-Length', stat.size);
+    fs.createReadStream(filePath).pipe(res);
   }
 }
