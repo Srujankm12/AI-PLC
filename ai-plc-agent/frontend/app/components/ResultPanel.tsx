@@ -10,6 +10,7 @@ interface ResultPanelProps {
 
 export default function ResultPanel({ result, downloadUrl, fileName }: ResultPanelProps) {
   const [copied, setCopied] = useState(false);
+  const [downloading, setDownloading] = useState(false);
 
   if (!result) return null;
 
@@ -18,6 +19,27 @@ export default function ResultPanel({ result, downloadUrl, fileName }: ResultPan
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
+  }
+
+  async function handleDownload() {
+    if (!downloadUrl || !fileName) return;
+    setDownloading(true);
+    try {
+      const res = await fetch(downloadUrl);
+      const blob = await res.blob();
+      // Use Blob URL so Chrome uses the `download` attribute for the filename
+      // instead of sniffing ZIP magic bytes and appending .zip
+      const url = URL.createObjectURL(new Blob([blob], { type: 'application/x-pcwex' }));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } finally {
+      setDownloading(false);
+    }
   }
 
   return (
@@ -30,16 +52,16 @@ export default function ResultPanel({ result, downloadUrl, fileName }: ResultPan
             <span className="text-sm font-semibold text-indigo-200">PLCnext project ready</span>
             <span className="text-xs text-indigo-400">{fileName}</span>
           </div>
-          <a
-            href={downloadUrl}
-            download={fileName}
-            className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-500 active:scale-95"
+          <button
+            onClick={handleDownload}
+            disabled={downloading}
+            className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-500 active:scale-95 disabled:opacity-60"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download .pcwex
-          </a>
+            {downloading ? 'Downloading…' : 'Download .pcwex'}
+          </button>
         </div>
       )}
 
