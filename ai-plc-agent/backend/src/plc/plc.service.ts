@@ -99,7 +99,7 @@ export class PlcService {
     }
 
     // ── Run Python agent to build .pcwex ─────────────────────────────────────
-    const builderPath = path.resolve(__dirname, '../../../../agent/builder.py');
+    const builderPath = path.resolve(__dirname, '../../../agent/builder.py');
     const astJson = JSON.stringify(ast).replace(/'/g, "\\'");
 
     let pcwexPath: string;
