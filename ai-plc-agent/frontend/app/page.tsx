@@ -11,24 +11,31 @@ type Status = "idle" | "loading" | "success" | "error";
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
 export default function Home() {
-  const [status, setStatus] = useState<Status>("idle");
-  const [result, setResult] = useState<string | null>(null);
-  const [error, setError] = useState<string | undefined>();
+  const [status, setStatus]       = useState<Status>("idle");
+  const [result, setResult]       = useState<string | null>(null);
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [fileName, setFileName]   = useState<string | null>(null);
+  const [error, setError]         = useState<string | undefined>();
 
   async function handleSubmit(prompt: string) {
     setStatus("loading");
     setResult(null);
+    setDownloadUrl(null);
+    setFileName(null);
     setError(undefined);
 
     try {
       const { data } = await axios.post(`${API_URL}/api/plc/generate`, { prompt });
-      setResult(typeof data === "string" ? data : JSON.stringify(data, null, 2));
+      const { ast, fileName: fn } = data as { ast: object; fileName: string };
+
+      setResult(JSON.stringify(ast, null, 2));
+      setFileName(fn);
+      setDownloadUrl(`${API_URL}/api/plc/download?file=${encodeURIComponent(fn)}`);
       setStatus("success");
     } catch (err) {
-      const message =
-        axios.isAxiosError(err)
-          ? (err.response?.data?.message ?? err.message)
-          : "Unexpected error occurred";
+      const message = axios.isAxiosError(err)
+        ? (err.response?.data?.message ?? err.message)
+        : "Unexpected error occurred";
       setError(message);
       setStatus("error");
     }
@@ -44,7 +51,7 @@ export default function Home() {
           <h1 className="text-xl font-semibold text-zinc-100">AI PLC Agent</h1>
         </div>
         <p className="text-sm text-zinc-500">
-          Describe your control logic in plain English — get IEC 61131-3 ladder code instantly.
+          Describe your control logic in plain English — get a PLCnext Engineer project instantly.
         </p>
       </header>
 
@@ -57,7 +64,11 @@ export default function Home() {
           <StatusDisplay status={status} error={error} />
         )}
 
-        <ResultPanel result={result} />
+        <ResultPanel
+          result={result}
+          downloadUrl={downloadUrl}
+          fileName={fileName}
+        />
       </main>
 
       <footer className="mt-auto pt-12 text-center text-xs text-zinc-600">
