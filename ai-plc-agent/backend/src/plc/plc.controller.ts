@@ -42,6 +42,10 @@ export class PlcController {
       throw new HttpException('File not found', HttpStatus.NOT_FOUND);
     }
 
-    res.download(filePath, file);
+    // Force octet-stream so browsers don't sniff the ZIP magic bytes
+    // and rename the file to .zip
+    res.setHeader('Content-Type', 'application/octet-stream');
+    res.setHeader('Content-Disposition', `attachment; filename="${file}"`);
+    res.sendFile(filePath);
   }
 }
