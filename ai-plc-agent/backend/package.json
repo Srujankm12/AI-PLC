@@ -1,10 +1,13 @@
 {
-  "name": "backend",
+  "name": "ai-plc-agent-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "NestJS backend for AI PLC Agent",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p tsconfig.json",
+    "start": "node -r dotenv/config dist/main.js",
+    "start:dev": "ts-node -r dotenv/config -r tsconfig-paths/register src/main.ts",
+    "start:prod": "node -r dotenv/config dist/main.js"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +17,14 @@
     "@nestjs/common": "^11.1.27",
     "@nestjs/core": "^11.1.27",
     "@nestjs/platform-express": "^11.1.27",
+    "dotenv": "^16.6.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
   }
 }
